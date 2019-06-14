@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./video.js";
 import brace from "brace";
 import AceEditor from "react-ace";
+import ReactPlayer from 'react-player'
 import "brace/mode/javascript";
 import "brace/theme/monokai";
+
+
 
 export default class App extends React.Component {
   constructor(props, context) {
@@ -43,6 +47,7 @@ export default class App extends React.Component {
         <button className="button" onClick={this.handleClick}>
           Run
         </button>
+        <ReactPlayer url='https://www.youtube.com/watch?v=y7hVM8CFsGE' playing />
       </div>
     );
   }
