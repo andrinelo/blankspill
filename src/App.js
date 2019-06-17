@@ -10,24 +10,21 @@ import "brace/theme/monokai";
 export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.state = { value: "5+7", button: false };
+    this.state = { value: "5+7", result: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-  }
-  shouldComponentUpdate(nextState) {
-    if (this.state.value !== nextState.value) {
-      return false;
-    } else {
-      return true;
-    }
   }
   handleChange = newValue => {
     this.setState({ value: newValue });
   };
 
   handleClick() {
-    this.setState({ button: !this.state.button });
-    console.log(eval(this.state.value));
+    try {
+      const result = eval(this.state.value);
+      this.setState({ result: result });
+    } catch {
+      console.log("meow");
+    }
   }
 
   render() {
@@ -51,7 +48,7 @@ export default class App extends React.Component {
         <button className="button" onClick={this.handleClick}>
           Run
         </button>
-        <div>{eval(this.state.value)}</div>
+        <div>{this.state.result}</div>
       </div>
     );
   }
