@@ -15,7 +15,7 @@ export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: "",
+      value: "//heihei, dette er en kommentar",
       result: "",
       videos: [],
       selectedVideo: null,
