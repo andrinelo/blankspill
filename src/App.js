@@ -9,7 +9,9 @@ import "./App.css";
 import AceEditor from "react-ace";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
-const API_KEY = "AIzaSyDV7_3l00M-Tj_FPSR0Q3F78kO14jioJ1k";
+//raggi const API_KEY = "AIzaSyDV7_3l00M-Tj_FPSR0Q3F78kO14jioJ1k";
+//andrine const API_KEY = "AIzaSyAdsAMX9HtHJeNfZgEmbdRsxZeyjnNpdFY";
+const API_KEY = 'AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s';
 
 export default class App extends React.Component {
   constructor(props, context) {
@@ -50,31 +52,41 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <AceEditor
-          mode="javascript"
-          theme="monokai"
-          value={this.state.value}
-          onChange={this.handleChange}
-          name="UNIQUE_ID_OF_DIV"
-          editorProps={{
-            $blockScrolling: true,
-          }}
-        />
-        <button className="button" onClick={this.handleClick}>
-          Run
-        </button>
-        <div>{this.state.result}</div>
-        <SearchBar
-          onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
-        />
-        <VideoDetail video={this.state.selectedVideo} />
-        <VideoList
-          onVideoSelect={userSelected =>
-            this.setState({ selectedVideo: userSelected })
-          }
-          videos={this.state.videos}
-        />
+      <div className = "container-fluid">
+        <div className = "row">
+          <div className = "col-lg-5">
+            <div className = "col-lg-12">
+              <AceEditor
+                mode="javascript"
+                theme="monokai"
+                value={this.state.value}
+                onChange={this.handleChange}
+                name="UNIQUE_ID_OF_DIV"
+                editorProps={{
+                  $blockScrolling: true,
+                }}
+              />
+            </div>
+            <button className="button" onClick={this.handleClick}>
+              Run
+            </button>
+            <div>{this.state.result}</div>
+          </div>
+          <div className = "col-lg-5">
+            <SearchBar
+              onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
+            />
+            <VideoDetail video={this.state.selectedVideo} />
+          </div>
+          <div className = "col-lg-2">
+            <VideoList
+              onVideoSelect={userSelected =>
+                this.setState({ selectedVideo: userSelected })
+              }
+              videos={this.state.videos}
+            />
+          </div>
+        </div>
       </div>
     );
   }
