@@ -5,7 +5,7 @@ import VideoListItem from "./components/videoListItem";
 import VideoDetail from "./components/videoDetails";
 import YTSearch from "youtube-api-search";
 import "./App.css";
-//import brace from "brace";
+import brace from "brace";
 import AceEditor from "react-ace";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
@@ -22,15 +22,16 @@ export default class App extends React.Component {
       videos: [],
       selectedVideo: null,
     };
-    this.videoSearch("React Tutorials");
+    this.videoSearch("Isac Elliot");
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   videoSearch(searchTerm) {
     YTSearch({ key: API_KEY, term: searchTerm }, data => {
+      const chosenData = [data[0], data[1], data[2]]
       this.setState({
-        videos: data,
+        videos: chosenData,
         selectedVideo: data[0],
       });
     });
