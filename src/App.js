@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import SearchBar from "./components/searchBar";
 import VideoList from "./components/videoList";
-import VideoListItem from "./components/videoListItem";
 import VideoDetail from "./components/videoDetails";
 import YTSearch from "youtube-api-search";
 import "./App.css";
@@ -11,13 +10,13 @@ import "brace/mode/javascript";
 import "brace/theme/monokai";
 //raggi const API_KEY = "AIzaSyDV7_3l00M-Tj_FPSR0Q3F78kO14jioJ1k";
 //andrine const API_KEY = "AIzaSyAdsAMX9HtHJeNfZgEmbdRsxZeyjnNpdFY";
-const API_KEY = 'AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s';
+const API_KEY = "AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s";
 
 export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: "//heihei, dette er en kommentar",
+      value: "//heihei, dette er en kommentar \n 5+7",
       result: "",
       videos: [],
       selectedVideo: null,
@@ -29,7 +28,7 @@ export default class App extends React.Component {
 
   videoSearch(searchTerm) {
     YTSearch({ key: API_KEY, term: searchTerm }, data => {
-      const chosenData = [data[0], data[1], data[2]]
+      const chosenData = [data[0], data[1], data[2]];
       this.setState({
         videos: chosenData,
         selectedVideo: data[0],
@@ -53,15 +52,19 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className = "container-fluid">
-        <div className = "row">
-          <div className = "col-lg-5">
-            <div className = "col-lg-12">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg-5">
+            <div className="col-lg-12">
               <AceEditor
+                width="100%"
                 mode="javascript"
                 theme="monokai"
                 value={this.state.value}
                 onChange={this.handleChange}
+                onValidate={e => {
+                  console.log(e);
+                }}
                 name="UNIQUE_ID_OF_DIV"
                 editorProps={{
                   $blockScrolling: true,
@@ -73,13 +76,13 @@ export default class App extends React.Component {
             </button>
             <div>{this.state.result}</div>
           </div>
-          <div className = "col-lg-5">
+          <div className="col-lg-5">
             <SearchBar
               onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
             />
             <VideoDetail video={this.state.selectedVideo} />
           </div>
-          <div className = "col-lg-2">
+          <div className="col-lg-2">
             <VideoList
               onVideoSelect={userSelected =>
                 this.setState({ selectedVideo: userSelected })
