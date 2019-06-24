@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import SearchBar from "./components/searchBar";
 import VideoList from "./components/videoList";
 import VideoDetail from "./components/videoDetails";
-import Questions from "./questions.js";
 import YTSearch from "youtube-api-search";
-import Style from "./App.css";
+import "./video.css";
 import brace from "brace";
 import AceEditor from "react-ace";
 import "brace/mode/javascript";
@@ -26,9 +25,6 @@ export default class App extends React.Component {
     this.videoSearch("Isac Elliot");
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.question1 = this.question1.bind(this);
-    this.question2 = this.question2.bind(this);
-    this.question3 = this.question3.bind(this);
   }
 
   videoSearch(searchTerm) {
@@ -49,59 +45,29 @@ export default class App extends React.Component {
     try {
       const result = eval(this.state.value);
       this.setState({ result: result });
-      if (Questions.a2 === eval(this.state.value)) {
-        //console.log("woho");
-        this.question1();
-        alert("Du klarte det!");
-      } else if (Questions.a1 === eval(this.state.value)) {
-        //console.log("tjohei");
-
-        this.question2();
-        alert("Du klarte det!");
-      } else {
-        //console.log("buhu");
-      }
     } catch {
       this.setState({ result: "" });
       alert("ikke godkjent javascript-syntaks");
     }
   }
 
-  question1() {
-    this.setState({ question: Questions.q1 });
-  }
-  question2() {
-    this.setState({ question: Questions.q2 });
-  }
-  question3() {
-    this.setState({ question: "video" });
-  }
-
   render() {
     return (
-      <div className={Style.app}>
-        <div>
-          <AceEditor
-            mode="javascript"
-            theme="monokai"
-            value={this.state.value}
-            onChange={this.handleChange}
-            name="UNIQUE_ID_OF_DIV"
-            editorProps={{
-              $blockScrolling: true,
-            }}
-          />
-          <button className="button" onClick={this.handleClick}>
-            Run
-          </button>
-        </div>
-        <div className={Style.task}>
-          <div>{this.state.result}</div>
-          <div>{this.state.question}</div>
-          <button onClick={this.question1}> Oppgave 1</button>
-          <button onClick={this.question2}> Oppgave 2</button>
-          <button onClick={this.question3}> Oppgave 3</button>
-          {/*
+      <div>
+        <AceEditor
+          mode="javascript"
+          theme="monokai"
+          value={this.state.value}
+          onChange={this.handleChange}
+          name="UNIQUE_ID_OF_DIV"
+          editorProps={{
+            $blockScrolling: true,
+          }}
+        />
+        <button className="button" onClick={this.handleClick}>
+          Run
+        </button>
+
         <SearchBar
           onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
         />
@@ -112,8 +78,7 @@ export default class App extends React.Component {
             this.setState({ selectedVideo: userSelected })
           }
           videos={this.state.videos}
-        />*/}
-        </div>
+        />
       </div>
     );
   }
