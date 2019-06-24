@@ -1,6 +1,4 @@
-var questions = [
-  { key: "Hva er 5+7?", value: "12" },
-  { key: "Skriv en funksjom som ganger to tall", value: "13" },
-];
 
-//export as questions;
+var questions = { q1: "Print stringen vi har skrevet", q2: "Lag en funksjon som ganger 2 og 3", a1: "Javascript er gøy", a2: "6"}
+
+export as questions:
