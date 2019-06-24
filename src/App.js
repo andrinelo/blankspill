@@ -73,9 +73,11 @@ export default class App extends React.Component {
   question2() {
     this.setState({ question: Questions.q2 });
   }
-  question3() {
-    this.setState({ question: "video" });
+
+  question3 = () => {
+        this.props.history.push('/video')
   }
+  
 
   render() {
     return (
