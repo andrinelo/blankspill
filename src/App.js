@@ -51,9 +51,9 @@ export default class App extends React.Component {
       this.setState({ result: result });
       if (Questions.a2 === eval(this.state.value)) {
         //console.log("woho");
-        this.question1();
+        this.question3();
         alert("Du klarte det!");
-      } else if (Questions.a1 === eval(this.state.value)) {
+      } else if (Questions.a2 === eval(this.state.value)) {
         //console.log("tjohei");
 
         this.question2();
@@ -75,9 +75,8 @@ export default class App extends React.Component {
   }
 
   question3 = () => {
-        this.props.history.push('/video')
-  }
-  
+    this.props.history.push("/video");
+  };
 
   render() {
     return (
