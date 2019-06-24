@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchBar from "./components/searchBar";
 import VideoList from "./components/videoList";
 import VideoDetail from "./components/videoDetails";
+import Questions from "./questions.js";
 import YTSearch from "youtube-api-search";
 import "./App.css";
 import brace from "brace";
@@ -18,12 +19,16 @@ export default class App extends React.Component {
     this.state = {
       value: "//heihei, dette er en kommentar \n 5+7",
       result: "",
+      question: "Velg en oppgave",
       videos: [],
       selectedVideo: null,
     };
     this.videoSearch("Isac Elliot");
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.question1 = this.question1.bind(this);
+    this.question2 = this.question2.bind(this);
+    this.question3 = this.question3.bind(this);
   }
 
   videoSearch(searchTerm) {
@@ -44,53 +49,67 @@ export default class App extends React.Component {
     try {
       const result = eval(this.state.value);
       this.setState({ result: result });
+      if (Questions.a2 === eval(this.state.value)) {
+        //console.log("woho");
+        this.question1();
+        alert("Du klarte det!");
+      } else if (Questions.a1 === eval(this.state.value)) {
+        //console.log("tjohei");
+
+        this.question2();
+        alert("Du klarte det!");
+      } else {
+        //console.log("buhu");
+      }
     } catch {
       this.setState({ result: "" });
-      console.log("ikke godkjent javascript syntaks");
+      alert("ikke godkjent javascript-syntaks");
     }
+  }
+
+  question1() {
+    this.setState({ question: Questions.q1 });
+  }
+  question2() {
+    this.setState({ question: Questions.q2 });
+  }
+  question3() {
+    this.setState({ question: "video" });
   }
 
   render() {
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-lg-5">
-            <div className="col-lg-12">
-              <AceEditor
-                width="100%"
-                mode="javascript"
-                theme="monokai"
-                value={this.state.value}
-                onChange={this.handleChange}
-                onValidate={e => {
-                  console.log(e);
-                }}
-                name="UNIQUE_ID_OF_DIV"
-                editorProps={{
-                  $blockScrolling: true,
-                }}
-              />
-            </div>
-            <button className="button" onClick={this.handleClick}>
-              Run
-            </button>
-            <div>{this.state.result}</div>
-          </div>
-          <div className="col-lg-5">
-            <SearchBar
-              onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
-            />
-            <VideoDetail video={this.state.selectedVideo} />
-          </div>
-          <div className="col-lg-2">
-            <VideoList
-              onVideoSelect={userSelected =>
-                this.setState({ selectedVideo: userSelected })
-              }
-              videos={this.state.videos}
-            />
-          </div>
-        </div>
+      <div>
+        <AceEditor
+          mode="javascript"
+          theme="monokai"
+          value={this.state.value}
+          onChange={this.handleChange}
+          name="UNIQUE_ID_OF_DIV"
+          editorProps={{
+            $blockScrolling: true,
+          }}
+        />
+        <button className="button" onClick={this.handleClick}>
+          Run
+        </button>
+        <div>{this.state.result}</div>
+        <div>{this.state.question}</div>
+        <button onClick={this.question1}> Oppgave 1</button>
+        <button onClick={this.question2}> Oppgave 2</button>
+        <button onClick={this.question3}> Oppgave 3</button>
+        {/*
+        <SearchBar
+          onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
+        />
+        <VideoDetail video={this.state.selectedVideo} />
+
+        <VideoList
+          onVideoSelect={userSelected =>
+            this.setState({ selectedVideo: userSelected })
+          }
+          videos={this.state.videos}
+        />*/}
       </div>
     );
   }
