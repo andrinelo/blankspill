@@ -4,7 +4,7 @@ import VideoList from "./components/videoList";
 import VideoDetail from "./components/videoDetails";
 import Questions from "./questions.js";
 import YTSearch from "youtube-api-search";
-import Style from "./App.css";
+import "./App.css";
 import brace from "brace";
 import AceEditor from "react-ace";
 import "brace/mode/javascript";
@@ -80,8 +80,8 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className={Style.app}>
-        <div>
+      <div className="app">
+        <div className="aceeditor">
           <AceEditor
             mode="javascript"
             theme="monokai"
@@ -95,9 +95,9 @@ export default class App extends React.Component {
           <button className="button" onClick={this.handleClick}>
             Run
           </button>
-        </div>
-        <div className={Style.task}>
           <div>{this.state.result}</div>
+        </div>
+        <div className="task">
           <div>{this.state.question}</div>
           <button onClick={this.question1}> Oppgave 1</button>
           <button onClick={this.question2}> Oppgave 2</button>

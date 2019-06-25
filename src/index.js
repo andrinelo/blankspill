@@ -10,14 +10,6 @@ import Notfound from "./components/notfound.js";
 const routing = (
   <Router>
     <div>
-      <ul>
-        <li>
-          <Link to="/game">Play game</Link>
-        </li>
-        <li>
-          <Link to="/video"> Work on your own</Link>
-        </li>
-      </ul>
       <Switch>
         <Route path="/video" component={Video} />
         <Route path="/game" component={App} />
