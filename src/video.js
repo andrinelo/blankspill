@@ -12,19 +12,21 @@ import "brace/theme/monokai";
 //andrine const API_KEY = "AIzaSyAdsAMX9HtHJeNfZgEmbdRsxZeyjnNpdFY";
 const API_KEY = "AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s";
 
-export default class App extends React.Component {
+export default class Video extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: "//heihei, dette er en kommentar \n 5+7",
+      value: "//heihei, dette er en kommentar",
       result: "",
-      question: "Velg en oppgave",
+      //question: 0,
       videos: [],
       selectedVideo: null,
     };
     this.videoSearch("Isac Elliot");
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.question1 = this.question1.bind(this);
+    this.question2 = this.question2.bind(this);
   }
 
   videoSearch(searchTerm) {
@@ -51,9 +53,28 @@ export default class App extends React.Component {
     }
   }
 
+  question1() {
+    this.props.history.push("/game");
+  }
+
+  question2() {
+    this.props.history.push({
+      pathname: "/game",
+      state: { question: 1 },
+    });
+    //this.setState({ question: 1 });
+  }
+
+  question3 = () => {
+    this.props.history.push("/video");
+  };
+
   render() {
     return (
       <div>
+        <button onClick={this.question1}> Tekst</button>
+        <button onClick={this.question2}> Funksjoner</button>
+        <button onClick={this.question3}> Video tutorial</button>
         <AceEditor
           mode="javascript"
           theme="monokai"
@@ -67,7 +88,7 @@ export default class App extends React.Component {
         <button className="button" onClick={this.handleClick}>
           Run
         </button>
-
+        <div>{this.state.result}</div>
         <SearchBar
           onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
         />
