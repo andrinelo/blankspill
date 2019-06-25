@@ -1,8 +1,16 @@
 .app {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 10% 20% 20% 20% 20% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.aceeditor {
+	grid-row-start:3;
+	grid-column-start: 2; 
 }
 
 .task {
-  flex-direction: column;
+	display: flex;
+	flex-direction: row;
+  	grid-row-start: 2; 
 }

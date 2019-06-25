@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Questions from "./questions.js";
-import Style from "./App.css";
+import "./App.css";
 import brace from "brace";
 import AceEditor from "react-ace";
 import "brace/mode/javascript";
@@ -72,11 +72,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className={Style.app}>
+      <div className="app">
         <button onClick={this.question1}> Tekst</button>
         <button onClick={this.question2}> Funksjoner</button>
         <button onClick={this.question3}> Video tutorial</button>
-        <div>
+        <div className ="aceeditor">
           <AceEditor
             mode="javascript"
             theme="monokai"
@@ -90,9 +90,9 @@ export default class App extends React.Component {
           <button className="button" onClick={this.handleClick}>
             Run
           </button>
-        </div>
-        <div className={Style.task}>
           <div>{this.state.result}</div>
+        </div>
+        <div className="task">
           <div>{Questions[this.state.question].q}</div>
         </div>
       </div>

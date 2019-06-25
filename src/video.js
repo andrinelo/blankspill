@@ -3,7 +3,7 @@ import SearchBar from "./components/searchBar";
 import VideoList from "./components/videoList";
 import VideoDetail from "./components/videoDetails";
 import YTSearch from "youtube-api-search";
-import "./video.css";
+import "./App.css";
 import brace from "brace";
 import AceEditor from "react-ace";
 import "brace/mode/javascript";
