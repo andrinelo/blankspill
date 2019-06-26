@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import App from "./App";
 import Video from "./video";
 import Frontpage from "./frontpage.js";
@@ -10,14 +10,6 @@ import Notfound from "./components/notfound.js";
 const routing = (
   <Router>
     <div>
-      {/* <ul>
-        <li>
-          <Link to="/game">Play game</Link>
-        </li>
-        <li>
-          <Link to="/video"> Work on your own</Link>
-        </li>
-      </ul> */}
       <Switch>
         <Route path="/video" component={Video} />
         <Route path="/game" component={App} />

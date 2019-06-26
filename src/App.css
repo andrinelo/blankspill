@@ -1,16 +1,54 @@
-.app {
+/*.app {
   display: grid;
   grid-template-columns: 10% 20% 20% 20% 20% 10%;
   grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
 
-.aceeditor {
-	grid-row-start:3;
-	grid-column-start: 2; 
+.aceEditor {
+  grid-row-start: 3;
+  grid-column-start: 2;
 }
 
 .task {
-	display: flex;
-	flex-direction: row;
-  	grid-row-start: 2; 
+  grid-row-start: 2;
+}
+
+.taskBar {
+  display: flex;
+  flex-direction: row;
+}*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.app {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  display: flex;
+  align-items: flex-end;
+  margin: 1em;
+}
+
+.task {
+  padding: 5em;
+}
+
+.taskBar {
+  display: flex;
+  justify-content: center;
+}
+
+.videoPage {
+  display: flex;
+  flex-direction: column;
+  padding: 5em;
+}
+
+.videoList {
+  display: flex;
+  flex-direction: row;
 }

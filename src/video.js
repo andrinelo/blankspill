@@ -18,11 +18,10 @@ export default class Video extends React.Component {
     this.state = {
       value: "//heihei, dette er en kommentar",
       result: "",
-      //question: 0,
       videos: [],
       selectedVideo: null,
     };
-    this.videoSearch("Isac Elliot");
+    this.videoSearch("Funny animals");
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.question1 = this.question1.bind(this);
@@ -62,7 +61,6 @@ export default class Video extends React.Component {
       pathname: "/game",
       state: { question: 1 },
     });
-    //this.setState({ question: 1 });
   }
 
   question3 = () => {
@@ -71,35 +69,44 @@ export default class Video extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.question1}> Tekst</button>
-        <button onClick={this.question2}> Funksjoner</button>
-        <button onClick={this.question3}> Video tutorial</button>
-        <AceEditor
-          mode="javascript"
-          theme="monokai"
-          value={this.state.value}
-          onChange={this.handleChange}
-          name="UNIQUE_ID_OF_DIV"
-          editorProps={{
-            $blockScrolling: true,
-          }}
-        />
-        <button className="button" onClick={this.handleClick}>
-          Run
-        </button>
-        <div>{this.state.result}</div>
-        <SearchBar
-          onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
-        />
-        <VideoDetail video={this.state.selectedVideo} />
-
-        <VideoList
-          onVideoSelect={userSelected =>
-            this.setState({ selectedVideo: userSelected })
-          }
-          videos={this.state.videos}
-        />
+      <div className="container">
+        <div className="taskBar">
+          <button onClick={this.question1}> Tekst</button>
+          <button onClick={this.question2}> Funksjoner</button>
+          <button onClick={this.question3}> Video tutorial</button>
+        </div>
+        <div className="app">
+          <div className="aceEditor">
+            <AceEditor
+              mode="javascript"
+              theme="monokai"
+              value={this.state.value}
+              onChange={this.handleChange}
+              name="UNIQUE_ID_OF_DIV"
+              editorProps={{
+                $blockScrolling: true,
+              }}
+            />
+            <button className="button" onClick={this.handleClick}>
+              Run
+            </button>
+            <div>{this.state.result}</div>
+          </div>
+          <div className="videoPage">
+            <VideoDetail video={this.state.selectedVideo} />
+            <SearchBar
+              onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
+            />
+            <div className="videoList">
+              <VideoList
+                onVideoSelect={userSelected =>
+                  this.setState({ selectedVideo: userSelected })
+                }
+                videos={this.state.videos}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

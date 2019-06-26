@@ -5,6 +5,7 @@ import brace from "brace";
 import AceEditor from "react-ace";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
+import { tsExternalModuleReference } from "@babel/types";
 //raggi const API_KEY = "AIzaSyDV7_3l00M-Tj_FPSR0Q3F78kO14jioJ1k";
 //andrine const API_KEY = "AIzaSyAdsAMX9HtHJeNfZgEmbdRsxZeyjnNpdFY";
 const API_KEY = "AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s";
@@ -13,8 +14,7 @@ export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value:
-        "//Dette er en editor. \n//Hvis du skriver kode her og trykker Run vil output vises på siden.",
+      value: "",
       result: "",
       question: 0,
       videos: [],
@@ -28,7 +28,6 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.history.location.state);
     const hState = this.props.history.location.state;
     if (!!hState && !!hState.question)
       this.setState({ question: hState.question });
@@ -40,18 +39,13 @@ export default class App extends React.Component {
 
   handleClick() {
     try {
-      const result = eval(this.state.value);
-      this.setState({ result: result });
-      if (Questions[this.state.question].a === eval(this.state.value)) {
-        alert("Du klarte det!");
-        console.log(this.state.question);
-        if (this.state.question === 0) {
-          this.setState({ question: this.state.question + 1 });
-        } else {
-          this.question3();
-        }
+      const test = Questions[this.state.question].test;
+      if (test(this.state.value)) {
+        this.setState({ question: this.state.question + 1 });
       } else {
-        alert("Prøv på nytt");
+        //kan legge inn feilmeldinge her
+        //kjøres hvis syntaks er riktig, men feil logikk
+        alert("Det ble feil, prøv en gang til :)");
       }
     } catch {
       this.setState({ result: "" });
@@ -72,28 +66,32 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        <button onClick={this.question1}> Tekst</button>
-        <button onClick={this.question2}> Funksjoner</button>
-        <button onClick={this.question3}> Video tutorial</button>
-        <div className ="aceeditor">
-          <AceEditor
-            mode="javascript"
-            theme="monokai"
-            value={this.state.value}
-            onChange={this.handleChange}
-            name="UNIQUE_ID_OF_DIV"
-            editorProps={{
-              $blockScrolling: true,
-            }}
-          />
-          <button className="button" onClick={this.handleClick}>
-            Run
-          </button>
-          <div>{this.state.result}</div>
+      <div className="container">
+        <div className="taskBar">
+          <button onClick={this.question1}> Tekst</button>
+          <button onClick={this.question2}> Funksjoner</button>
+          <button onClick={this.question3}> Video tutorial</button>
         </div>
-        <div className="task">
-          <div>{Questions[this.state.question].q}</div>
+        <div className="app">
+          <div className="aceEditor">
+            <AceEditor
+              mode="javascript"
+              theme="monokai"
+              value={this.state.value}
+              onChange={this.handleChange}
+              name="UNIQUE_ID_OF_DIV"
+              editorProps={{
+                $blockScrolling: true,
+              }}
+            />
+            <button className="button" onClick={this.handleClick}>
+              Run
+            </button>
+            <div>{this.state.result}</div>
+          </div>
+          <div className="task">
+            <div>{Questions[this.state.question].q}</div>
+          </div>
         </div>
       </div>
     );
