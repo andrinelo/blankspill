@@ -25,8 +25,12 @@ export default class TodoForm extends React.Component {
 	render(){
 		return(
 			<div>
-				<form>
-					<input onChange={this.handleChange} value={this.state.value}/>
+				<form onSubmit={this.handleAdd}>
+					<input 
+						placeholder="Kjøpe hest"
+						onChange={this.handleChange}
+						value={this.state.value}
+					/>
 					<button onClick={this.handleAdd}>
 						Legg til
 					</button>

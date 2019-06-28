@@ -15,7 +15,7 @@ export default class TodoList extends React.Component {
 
 	addTodo(item){
 		this.setState(
-			{todos: [<div>{item}</div>, ...this.state.todos]}
+			{todos: [<li>{item}</li>, ...this.state.todos]}
 		);
 		console.log(this.state.todos)
 	};
