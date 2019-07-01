@@ -26,7 +26,7 @@ export default class TodoForm extends React.Component {
         <div className="todoForm">
           <form onSubmit={this.handleAdd}>
             <input
-              placeholder="Kjøpe hest"
+              placeholder="Skriv inn todo"
               onChange={this.handleChange}
               value={this.state.value}
             />

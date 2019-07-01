@@ -49,7 +49,6 @@ export default class App extends React.Component {
         alert("Det ble feil, prøv en gang til :)");
       }
     } catch {
-      this.setState({ result: "" });
       alert("ikke godkjent javascript-syntaks");
     }
   }
@@ -90,7 +89,6 @@ export default class App extends React.Component {
               <button className="button" onClick={this.handleClick}>
                 Run
               </button>
-              <div>{this.state.result}</div>
             </div>
           </div>
           <TodoList />
