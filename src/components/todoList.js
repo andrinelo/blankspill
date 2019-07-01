@@ -4,15 +4,6 @@ import TodoListItem from './todoListItem';
 import "../App.css";
 
 export default class TodoList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos: [],
-    };
-    this.addTodo = this.addTodo.bind(this);
-  }
-
-
 	constructor(props){
 		super(props);
 		this.state = {
