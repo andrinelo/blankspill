@@ -1,5 +1,4 @@
 var questions = [
-  { q: "Print setningen Javascript er gøy", a: "Javascript er gøy" },
   {
     q: "Lag en funksjon med navn multiplication som ganger to tall",
     test: function test(input) {
@@ -15,7 +14,7 @@ var questions = [
   {
     q: "Alert + variabel",
     test: function test(input) {
-      return false;
+      return true;
     },
   },
   { q: "hei" },

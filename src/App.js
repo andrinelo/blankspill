@@ -54,23 +54,25 @@ export default class App extends React.Component {
   }
 
   question1() {
-    this.setState({ question: 0 });
+    this.setState({
+      question: 0,
+      value: "function multiplication(a, b) {\n //skriv kode her \n}",
+    });
   }
   question2() {
     this.setState({ question: 1 });
   }
-
-  question3 = () => {
-    this.props.history.push("/video");
-  };
+  question3() {
+    this.setState({ question: 2 });
+  }
 
   render() {
     return (
       <div className="container">
         <div className="taskBar">
-          <button onClick={this.question1}> Tekst</button>
-          <button onClick={this.question2}> Funksjoner</button>
-          <button onClick={this.question3}> Video tutorial</button>
+          <button onClick={this.question1}> Oppgave 1</button>
+          <button onClick={this.question2}> Oppgave 2 </button>
+          <button onClick={this.question3}> Oppgave 3 </button>
         </div>
         <div className="app">
           <div>
