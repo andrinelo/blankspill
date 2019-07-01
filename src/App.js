@@ -74,26 +74,26 @@ export default class App extends React.Component {
           <button onClick={this.question3}> Video tutorial</button>
         </div>
         <div className="app">
-          <div className="aceEditor">
-            <AceEditor
-              mode="javascript"
-              theme="monokai"
-              value={this.state.value}
-              onChange={this.handleChange}
-              name="UNIQUE_ID_OF_DIV"
-              editorProps={{
-                $blockScrolling: true,
-              }}
-            />
-            <button className="button" onClick={this.handleClick}>
-              Run
-            </button>
-            <div>{this.state.result}</div>
+          <div>
+            <div className="task">{Questions[this.state.question].q}</div>
+            <div className="aceEditor">
+              <AceEditor
+                mode="javascript"
+                theme="monokai"
+                value={this.state.value}
+                onChange={this.handleChange}
+                name="UNIQUE_ID_OF_DIV"
+                editorProps={{
+                  $blockScrolling: true,
+                }}
+              />
+              <button className="button" onClick={this.handleClick}>
+                Run
+              </button>
+              <div>{this.state.result}</div>
+            </div>
           </div>
-          <div className="task">
-            <div>{Questions[this.state.question].q}</div>
-          </div>
-          <TodoList/>
+          <TodoList />
         </div>
       </div>
     );
