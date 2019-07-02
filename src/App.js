@@ -15,7 +15,8 @@ export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: "var todos = ['lære å programmere', 'bli rik'];\nfunction addTodo(item){\n//skriv din kode her\nreturn todos;\n}",
+      value:
+        "var todos = [];\nfunction addTodo(item){\n//skriv din kode her\nreturn todos;\n}",
       result: "",
       question: 0,
       videos: [],
@@ -41,7 +42,6 @@ export default class App extends React.Component {
   handleClick() {
     try {
       const test = Questions[this.state.question].test;
-      console.log(this.state.value);
       if (test(this.state.value)) {
         this.setState({ question: this.state.question + 1 });
       } else {
