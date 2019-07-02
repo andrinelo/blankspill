@@ -20,7 +20,6 @@ export default class App extends React.Component {
       question: 0,
       videos: [],
       selectedVideo: null,
-      enable: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -43,10 +42,10 @@ export default class App extends React.Component {
     try {
       const test = Questions[this.state.question].test;
       if (test(this.state.value)) {
-        this.setState({ enable: this.state.enable + 1})
         this.setState({ question: this.state.question + 1 });
+        console.log(this.state.question);
       } else {
-        //kan legge inn feilmeldinge her
+        //kan legge inn feilmelding her
         //kjøres hvis syntaks er riktig, men feil logikk
         alert("Det ble feil, prøv en gang til :)");
       }
@@ -72,7 +71,7 @@ export default class App extends React.Component {
     return (
       <div className="container">
         <div className="taskBar">
-          <button onClick={this.question1}> Oppgave 1</button>
+          <button onClick={this.question1}> Oppgave 1 </button>
           <button onClick={this.question2}> Oppgave 2 </button>
           <button onClick={this.question3}> Oppgave 3 </button>
         </div>
@@ -95,7 +94,7 @@ export default class App extends React.Component {
               </button>
             </div>
           </div>
-          <TodoList enable={this.state.enable}/>
+          <TodoList enable={this.state.question} />
         </div>
       </div>
     );

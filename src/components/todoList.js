@@ -13,32 +13,27 @@ export default class TodoList extends React.Component {
     this.checkIfEmpty = this.checkIfEmpty.bind(this);
   }
 
- checkIfEmpty(item){
-  	if (item===""){
-  		return true;
-  	}
-  	return false;
-  } 
-
- 
+  checkIfEmpty(item) {
+    if (item === "") {
+      return true;
+    }
+    return false;
+  }
 
   addTodo(item) {
     const warning = "Du må skrive en todo først";
-    if (this.props.enable >= 2){
-    	if (this.checkIfEmpty(item)){
-		alert(warning);
-   		 }
-    	else {
-      	this.setState({ todos: [<li>{item}</li>, ...this.state.todos] });
-    	}
+    if (this.props.enable >= 2) {
+      if (this.checkIfEmpty(item)) {
+        alert(warning);
+      } else {
+        this.setState({ todos: [<li>{item}</li>, ...this.state.todos] });
+      }
+    } else if (this.props.enable >= 1) {
+      this.setState({ todos: [<li>{item}</li>, ...this.state.todos] });
+    } else {
+      alert("Du må gjøre oppgave 1 først");
+      return false;
     }
-    else if(this.props.enable >= 1){
-    	this.setState({ todos: [<li>{item}</li>, ...this.state.todos]});
-    }
-    else {
-    	alert("Du må gjøre oppgave 1 først");
-    	return false}
-
   }
 
   deleteTodo(index) {
