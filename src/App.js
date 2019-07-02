@@ -15,11 +15,12 @@ export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: "",
+      value: "function multiplication(a, b) {\n //skriv kode her \n}",
       result: "",
       question: 0,
       videos: [],
       selectedVideo: null,
+      enable: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -42,6 +43,7 @@ export default class App extends React.Component {
     try {
       const test = Questions[this.state.question].test;
       if (test(this.state.value)) {
+        this.setState({ enable: this.state.enable + 1})
         this.setState({ question: this.state.question + 1 });
       } else {
         //kan legge inn feilmeldinge her
@@ -93,7 +95,7 @@ export default class App extends React.Component {
               </button>
             </div>
           </div>
-          <TodoList />
+          <TodoList enable={this.state.enable}/>
         </div>
       </div>
     );
