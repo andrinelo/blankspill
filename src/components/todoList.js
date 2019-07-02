@@ -7,7 +7,7 @@ export default class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: [],
+      todos: ["lære å programmere", "bli rik"],
     };
     this.addTodo = this.addTodo.bind(this);
     this.checkIfEmpty = this.checkIfEmpty.bind(this);

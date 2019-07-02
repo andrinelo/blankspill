@@ -15,7 +15,7 @@ export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: "function multiplication(a, b) {\n //skriv kode her \n}",
+      value: "var todos = ['lære å programmere', 'bli rik'];\nfunction addTodo(item){\n//skriv din kode her\nreturn todos;\n}",
       result: "",
       question: 0,
       videos: [],
@@ -41,9 +41,9 @@ export default class App extends React.Component {
   handleClick() {
     try {
       const test = Questions[this.state.question].test;
+      console.log(this.state.value);
       if (test(this.state.value)) {
         this.setState({ question: this.state.question + 1 });
-        console.log(this.state.question);
       } else {
         //kan legge inn feilmelding her
         //kjøres hvis syntaks er riktig, men feil logikk
