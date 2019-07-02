@@ -43,7 +43,10 @@ export default class App extends React.Component {
     try {
       const test = Questions[this.state.question].test;
       if (test(this.state.value)) {
-        this.setState({ question: this.state.question + 1 });
+        this.setState({
+          question: this.state.question + 1,
+          value: Questions[this.state.question + 1].startValue,
+        });
       } else {
         //kan legge inn feilmelding her
         //kjøres hvis syntaks er riktig, men feil logikk
@@ -57,11 +60,11 @@ export default class App extends React.Component {
   question1() {
     this.setState({
       question: 0,
-      value: "function multiplication(a, b) {\n //skriv kode her \n}",
+      value: Questions[0].startValue,
     });
   }
   question2() {
-    this.setState({ question: 1 });
+    this.setState({ question: 1, value: Questions[1].startValue });
   }
   question3() {
     this.setState({ question: 2 });
