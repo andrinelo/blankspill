@@ -26,10 +26,10 @@ export default class TodoList extends React.Component {
       if (this.checkIfEmpty(item)) {
         alert(warning);
       } else {
-        this.setState({ todos: [<li>{item}</li>, ...this.state.todos] });
+        this.setState({ todos: [<div>{item}</div>, ...this.state.todos] });
       }
     } else if (this.props.enable >= 1) {
-      this.setState({ todos: [<li>{item}</li>, ...this.state.todos] });
+      this.setState({ todos: [<div>{item}</div>, ...this.state.todos] });
     } else {
       alert("Du må gjøre oppgave 1 først");
       return false;
@@ -53,8 +53,8 @@ export default class TodoList extends React.Component {
       );
     });
     return (
-      <div className="todoApp">
-        <div> Todo app</div>
+      <div>
+        <div className="todoTitle"> Todo app</div>
         <TodoForm onAdd={this.addTodo} />
         {todos}
       </div>

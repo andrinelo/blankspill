@@ -74,13 +74,15 @@ export default class App extends React.Component {
     return (
       <div className="container">
         <div className="taskBar">
-          <button onClick={this.question1}> Oppgave 1 </button>
-          <button onClick={this.question2}> Oppgave 2 </button>
-          <button onClick={this.question3}> Oppgave 3 </button>
+          <button className="taskBtn" onClick={this.question1}> Oppgave 1 </button>
+          <button className="taskBtn" onClick={this.question2}> Oppgave 2 </button>
+          <button className="taskBtn" onClick={this.question3}> Oppgave 3 </button>
         </div>
         <div className="app">
           <div>
-            <div className="task">{Questions[this.state.question].q}</div>
+            <div className="task">
+              <p className="question">{Questions[this.state.question].q}</p>
+            </div>
             <div className="aceEditor">
               <AceEditor
                 mode="javascript"
@@ -88,6 +90,8 @@ export default class App extends React.Component {
                 value={this.state.value}
                 onChange={this.handleChange}
                 name="UNIQUE_ID_OF_DIV"
+                height='300px'
+                width='400px'
                 editorProps={{
                   $blockScrolling: true,
                 }}
@@ -97,7 +101,9 @@ export default class App extends React.Component {
               </button>
             </div>
           </div>
-          <TodoList enable={this.state.question} />
+          <div className = "todoList">
+            <TodoList  enable={this.state.question} />
+          </div>
         </div>
       </div>
     );
