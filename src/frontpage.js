@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 
 export default class Frontpage extends React.Component {
   constructor(props, context) {
@@ -15,10 +16,12 @@ export default class Frontpage extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1>DETTE ER HJEMMESIDEN</h1>
-        <button onClick={this.tasks}>Oppgaver</button>
-        <button onClick={this.video}>Video tutorial</button>
+      <div className="frontPage">
+        <div className="frontPageHeader">
+          <h1>DETTE ER HJEMMESIDEN</h1>
+        </div>
+          <button className="frontPageBtn" onClick={this.tasks}>FORSTÅ KODING</button>
+          <button className="frontPageBtn" onClick={this.video}>FØLG VALGFRI YOUTUBE TUTORIAL</button>
       </div>
     );
   }
