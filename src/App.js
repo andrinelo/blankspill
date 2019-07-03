@@ -15,8 +15,7 @@ export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value:
-        "var todos = [];\nfunction addTodo(item){\n//skriv din kode her\nreturn todos;\n}",
+      value: Questions[0].startValue,
       result: "",
       question: 0,
       videos: [],
@@ -42,6 +41,7 @@ export default class App extends React.Component {
   handleClick() {
     try {
       const test = Questions[this.state.question].test;
+      console.log(test);
       if (test(this.state.value)) {
         this.setState({
           question: this.state.question + 1,
@@ -53,7 +53,9 @@ export default class App extends React.Component {
         alert("Det ble feil, prøv en gang til :)");
       }
     } catch {
-      alert("ikke godkjent javascript-syntaks");
+      alert(
+        "Noe ble feil, sjekk at du har skrevet riktig navn på variabler og funksjoner, og at syntaksten er riktig.",
+      );
     }
   }
 
@@ -67,7 +69,7 @@ export default class App extends React.Component {
     this.setState({ question: 1, value: Questions[1].startValue });
   }
   question3() {
-    this.setState({ question: 2 });
+    this.setState({ question: 2, value: Questions[2].startValue });
   }
 
   render() {

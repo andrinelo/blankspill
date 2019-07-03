@@ -37,9 +37,11 @@ export default class TodoList extends React.Component {
   }
 
   deleteTodo(index) {
-    let todoArray = this.state.todos;
-    todoArray.splice(index, 1);
-    this.setState({ todos: todoArray });
+    if (this.props.enable >= 3) {
+      let todoArray = this.state.todos;
+      todoArray.splice(index, 1);
+      this.setState({ todos: todoArray });
+    }
   }
 
   render() {
