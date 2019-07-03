@@ -25,12 +25,12 @@ export default class TodoForm extends React.Component {
       <div>
         <div className="todoForm">
           <form onSubmit={this.handleAdd}>
-            <input
+            <input className="todoInput"
               placeholder="Skriv inn todo"
               onChange={this.handleChange}
               value={this.state.value}
             />
-            <button onClick={this.handleAdd}>Legg til</button>
+            <button className="leggTil" onClick={this.handleAdd}>✔️</button>
           </form>
         </div>
       </div>

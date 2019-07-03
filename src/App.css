@@ -45,23 +45,39 @@
   margin: 1px;
   padding-left: 10%;
   border-radius: 6px;
-  margin-right: 60px;
+  margin-right: 4px;
 
 }
 .todoListItem:hover {
   text-decoration: line-through;
 }
 
-.button {
+.todoInput {
+    font-family: Butler, serif;
+    font-size: 12px;
+}
+
+.leggTil {
+    font-family: Butler, serif;
+    font-size: 12px;
+    width: 40px;
+    text-align: center;
+    border:none;
+    background-color: #4CAF50;
+}
+
+
+  /*Dette er RUNKNAPPEN*/
+.button { 
   display: flex;
-  /*align-items: flex-end;*/
   background-color: #4CAF50; /* Green */
   border: none;
-  color: white;
+  color: black;
   padding: 5px 15px;
   text-align: center;
   font-size: 16px;
   float: right;
+  font-family: Butler, serif;
 
 }
 
@@ -85,7 +101,8 @@
 .taskBar {
   display: flex;
   justify-content: center;
-  padding-left: 13%;
+  padding-left: 1%;
+  margin-right: 400px;
 }
 
 .taskBtn {
