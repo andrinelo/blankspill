@@ -59,6 +59,7 @@ export default class TodoList extends React.Component {
         <div className="todoTitle"> Todo app</div>
         <TodoForm onAdd={this.addTodo} />
         {todos}
+        Antall gjøremål du har igjen er {this.state.todos.length}
       </div>
     );
   }

@@ -19,7 +19,7 @@
   width: 370px;
   height: 480px;
   margin-top: 20px;
-  font-family: Butler,serif;
+  font-family: Butler,sans-serif;
   justify-content: center;
   padding-left: 15px;
   padding-right: 15px;
@@ -36,7 +36,7 @@
   text-align: center;
   font-size: 40px;
   font-weight: 400;
-  font-family: Butler, serif;
+  font-family: Butler, sans-serif;
 }
 
 .todoListItem {
@@ -55,7 +55,7 @@
 }
 
 .todoInput {
-    font-family: Butler, serif;
+    font-family: Butler, sans-serif;
     font-size: 14px;
     background-color: #DDDDDD;
     border-radius: 3px;
@@ -63,7 +63,7 @@
 }
 
 .leggTil {
-    font-family: Butler, serif;
+    font-family: Butler, sans-serif;
     font-size: 12px;
     width: 40px;
     text-align: center;
@@ -82,7 +82,7 @@
   text-align: center;
   font-size: 16px;
   float: right;
-  font-family: Butler, serif;
+  font-family: Butler, sans-serif;
 
 }
 
@@ -94,7 +94,7 @@
   border: 5px;
   margin-top: 5%;
   margin-bottom: 5%;
-  font-family: Butler,serif;
+  font-family: Butler,sans-serif;
   background-color: #A1A3A2;
   border-radius: 5px;
   justify-content: center;
@@ -134,7 +134,7 @@
   font-weight: 600;
   padding:5px 5px;
   text-decoration:none;
-  font-family: Butler,serif;
+  font-family: Butler,sans-serif;
   margin: 5px;
 }
 
@@ -197,7 +197,7 @@
   text-align: center;
   font-size: 90px;
   font-weight: 100;
-  font-family: Butler,serif;
+  font-family: Butler,sans-serif;
 }
 
 .frontPageBtn {
@@ -223,7 +223,7 @@
   font-weight: 500;
   padding:12px 30px;
   text-decoration:none;
-  font-family: Butler,serif;
+  font-family: Butler,sans-serif;
   margin: 20px;
 }
 
