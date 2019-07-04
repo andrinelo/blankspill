@@ -1,0 +1,16 @@
+/* DETTE ER TIL VIDEO */
+
+.videoPage {
+  display: flex;
+  flex-direction: column;
+  padding: 5em;
+}
+
+.videoList {
+  display: flex;
+  flex-direction: row;
+}
+
+.description {
+	font-size: 10px;
+}

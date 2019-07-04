@@ -46,7 +46,9 @@
   padding-left: 10%;
   border-radius: 6px;
   margin-right: 4px;
-
+  resize: none;
+  max-width: 200px;
+  overflow: hidden; /*skjuler hvis man skriver for my*/
 }
 .todoListItem:hover {
   text-decoration: line-through;
@@ -54,7 +56,11 @@
 
 .todoInput {
     font-family: Butler, serif;
-    font-size: 12px;
+    font-size: 14px;
+    resize: none;
+    background-color: #DDDDDD;
+    border-radius: 3px;
+    border: none;
 }
 
 .leggTil {
@@ -81,6 +87,7 @@
 
 }
 
+/*Dette er oppgavene */
 .task {
   display: flex;
   width: 350px;
@@ -149,18 +156,6 @@
   top:1px;
 }
 
-/* DETTE ER TIL VIDEO */
-
-.videoPage {
-  display: flex;
-  flex-direction: column;
-  padding: 5em;
-}
-
-.videoList {
-  display: flex;
-  flex-direction: row;
-}
 
 /* DETTE ER TIL TODO */
 
@@ -173,6 +168,7 @@
   display: flex;
   flex-direction: row;
 }
+
 
 /* DETTE ER TIL FRONTPAGE */
 
