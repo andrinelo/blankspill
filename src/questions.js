@@ -1,7 +1,7 @@
 var questions = [
   {
     q:
-      "Nå kan man ikke legge til nye todos. Skriv funksjonen addTodo for å fikse det.",
+      "Nå kan du ikke legge til nye todos i appen din. Prøv selv ved å skrive inn en todo og se hva som skjer 🚀 For å fikse dette - skriv ferdig funksjonen addTodo. Tips: hjelpefunksjonen push legger til et element i en liste",
     startValue:
       "var todoList = [];\nfunction addTodo(todoItem){\n  //skriv din kode her\n  return todoList;\n}",
     test: function test(input) {
@@ -20,9 +20,9 @@ var questions = [
   },
   {
     q:
-      "Nå kan man legge til tomme todos,vi ønsker ikke at det skal være mulig. Skriv metoden checkIfEmpty for å unngå det.",
+      "Nå kan man legge til tomme todos, det er ikke helt heldig. Test det selv 🔍 Skriv ferdig metoden checkIfEmpty ved å fullføre en 'if-statement' slik at man kan ikke kan legge til todos uten innhold ",
     startValue:
-      "let todoList =[];\nfunction checkIfEmpty(todoItem){\n  if (todoItem === ''){\n    alert('Du må skrive en todo først');\n    return todoList;\n  }\n  else{\n    todoList.push(todoItem);\n    return todoList;\n  }\n}",
+      "let todoList =[];\nfunction checkIfEmpty(todoItem){\n  if (/*din kode her*/ === /*dine kode her*/){\n        return todoList;\n  }\n  else{\n    todoList.push(todoItem);\n    return todoList;\n  }\n}",
     test: function test(input) {
       let a = eval(input + "checkIfEmpty('bli rik')");
       if (a.toString) {
@@ -51,9 +51,9 @@ var questions = [
   },
   {
     q:
-      "splice() er en innebygd funksjon i JavaScript som kan brukes for å endre en liste. Den tar inn hvilket element man skal slette og hvor mange. Nå kan man ikke slette todos. Skriv todoArray.splice(index,1); for å fikse det.",
+      "I JavaScript har man noen innebygde funksjoner man kan bruke til forskjellige ting. Splice() for eksempel kan brukes for å endre en liste. Den tar inn hvilket element man skal slette og hvor mange elementer fra og med det elementet. \n Nå kan man ikke slette todos, prøv selv 🔍 Skriv ferdig deleteTodo for å fikse det",
     startValue:
-      "function deleteTodo(todoList, index){\n  todoList.splice(index, 1);\n  return todoList;\n}",
+      "function deleteTodo(todoList, todoItemNumber){\n  //skriv din kode her \n  return todoList;\n}",
     test: function test(input) {
       let testList = [1, 1, 2, 3, 4, 5, 6];
       let testList2 = [1, 1, 2, 3, 4, 5, 6];
