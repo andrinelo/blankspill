@@ -17,7 +17,7 @@
 .todoList {
   display: flex;
   width: 370px;
-  height: 450px;
+  height: 480px;
   margin-top: 20px;
   font-family: Butler,serif;
   justify-content: center;
@@ -41,12 +41,12 @@
 
 .todoListItem {
   background-color: rgba(16, 148, 162, 0.26);
-  opacity: 0,5;
   margin: 1px;
+  width: 205px;
+  height: 20px;
   padding-left: 10%;
   border-radius: 6px;
   margin-right: 4px;
-  resize: none;
   max-width: 200px;
   overflow: hidden; /*skjuler hvis man skriver for my*/
 }
@@ -57,7 +57,6 @@
 .todoInput {
     font-family: Butler, serif;
     font-size: 14px;
-    resize: none;
     background-color: #DDDDDD;
     border-radius: 3px;
     border: none;
@@ -91,7 +90,7 @@
 .task {
   display: flex;
   width: 350px;
-  height: 100px;
+  height: 45%;
   border: 5px;
   margin-top: 5%;
   margin-bottom: 5%;

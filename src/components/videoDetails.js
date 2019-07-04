@@ -1,4 +1,5 @@
 import React from "react";
+import "../video.css";
 
 const VideoDetail = props => {
   const video = props.video;
@@ -12,7 +13,7 @@ const VideoDetail = props => {
 
   return (
     <div>
-      <iframe src={url} />
+      <iframe className="videoContainer" src={url} />
       <div className="details">
         <strong>{video.snippet.title}</strong>
         <div>{video.snippet.description}</div>

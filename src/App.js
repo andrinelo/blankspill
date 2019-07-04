@@ -92,7 +92,7 @@ export default class App extends React.Component {
                 value={this.state.value}
                 onChange={this.handleChange}
                 name="UNIQUE_ID_OF_DIV"
-                height='300px'
+                height='200px'
                 width='400px'
                 editorProps={{
                   $blockScrolling: true,

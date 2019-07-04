@@ -6,11 +6,23 @@
   padding: 5em;
 }
 
-.videoList {
+.videoListItem {
   display: flex;
   flex-direction: row;
+  background-color: orange;
+  width: 10px;
+  height: 10px;
 }
 
 .description {
 	font-size: 10px;
 }
+
+.videoContainer {
+	position:relative;
+	width: 640px;
+	height: 360px;
+
+
+}
+
