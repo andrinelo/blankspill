@@ -13,9 +13,9 @@ Programmering er veldig abstrakt. Du har en variabel, du setter en verdi til den
 </ul>
 
 ### Download
-`git clone https://github.com/andrinelo/blankspill.git`
-`npm install`
-`npm start`
+<li> `git clone https://github.com/andrinelo/blankspill.git` </li>
+<li> `npm install` </li>
+<li> `npm start` </li>
 
 ### Deployment (dette fjernes når vi evt har gjort det)
 
