@@ -1,8 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  background-color: #39393B;
-  width:100%;
+  background-color: #39393b;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   position: fixed;
@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left:16%;
+  padding-left: 16%;
 }
 
 .todoList {
@@ -19,14 +19,14 @@
   width: 370px;
   height: 480px;
   margin-top: 20px;
-  font-family: Butler,sans-serif;
+  font-family: Butler, sans-serif;
   justify-content: center;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 10px;
   margin-left: 5%;
   border-radius: 5px;
-  background-color: #A1A3A2;
+  background-color: #a1a3a2;
 }
 
 .todoTitle {
@@ -55,27 +55,26 @@
 }
 
 .todoInput {
-    font-family: Butler, sans-serif;
-    font-size: 14px;
-    background-color: #DDDDDD;
-    border-radius: 3px;
-    border: none;
+  font-family: Butler, sans-serif;
+  font-size: 14px;
+  background-color: #dddddd;
+  border-radius: 3px;
+  border: none;
 }
 
 .leggTil {
-    font-family: Butler, sans-serif;
-    font-size: 12px;
-    width: 40px;
-    text-align: center;
-    border:none;
-    background-color: #4CAF50;
+  font-family: Butler, sans-serif;
+  font-size: 12px;
+  width: 40px;
+  text-align: center;
+  border: none;
+  background-color: #4caf50;
 }
 
-
-  /*Dette er RUNKNAPPEN*/
-.button { 
+/*Dette er RUNKNAPPEN*/
+.button {
   display: flex;
-  background-color: #4CAF50; /* Green */
+  background-color: #4caf50; /* Green */
   border: none;
   color: black;
   padding: 5px 15px;
@@ -83,7 +82,6 @@
   font-size: 16px;
   float: right;
   font-family: Butler, sans-serif;
-
 }
 
 /*Dette er oppgavene */
@@ -94,15 +92,14 @@
   border: 5px;
   margin-top: 5%;
   margin-bottom: 5%;
-  font-family: Butler,sans-serif;
-  background-color: #A1A3A2;
+  font-family: Butler, sans-serif;
+  background-color: #a1a3a2;
   border-radius: 5px;
   justify-content: center;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 10px;
 }
-
 
 .taskBar {
   display: flex;
@@ -112,49 +109,59 @@
 }
 
 .taskBtn {
-  -moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
-  box-shadow:inset 0px 1px 0px 0px #bee2f9;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf));
-  background:-moz-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background:-webkit-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background:-o-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background:-ms-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf',GradientType=0);
-  background-color:#63b8ee;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  border:1px solid #3866a3;
-  display:inline-block;
-  cursor:pointer;
-  color:#14396a;
-  font-size:10px;
+  -moz-box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #63b8ee),
+    color-stop(1, #468ccf)
+  );
+  background: -moz-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+  background: -webkit-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+  background: -o-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+  background: -ms-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf',GradientType=0);
+  background-color: #63b8ee;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #3866a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #14396a;
+  font-size: 10px;
   font-weight: 600;
-  padding:5px 5px;
-  text-decoration:none;
-  font-family: Butler,sans-serif;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-family: Butler, sans-serif;
   margin: 5px;
 }
 
-
-.taskBtn:hover { 
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee));
-  background:-moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background:-webkit-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background:-o-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background:-ms-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background:linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0);
-  background-color:#468ccf;
+.taskBtn:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #468ccf),
+    color-stop(1, #63b8ee)
+  );
+  background: -moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+  background: -webkit-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+  background: -o-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+  background: -ms-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+  background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0);
+  background-color: #468ccf;
 }
 
 .taskBtn:active {
-  position:relative;
-  top:1px;
+  position: relative;
+  top: 1px;
 }
-
 
 /* DETTE ER TIL TODO */
 
@@ -168,22 +175,20 @@
   flex-direction: row;
 }
 
-
 /* DETTE ER TIL FRONTPAGE */
 
-
-.frontPage{
+.frontPage {
   /*background-color: #161617;*/
-  background-color: #39393B;
+  background-color: #39393b;
   position: fixed;
-  width:100%;
+  width: 100%;
   height: 100%;
   z-index: -10;
   text-align: center;
   transition: all 500ms ease;
 }
 
-.frontPageHeader{
+.frontPageHeader {
   display: grid;
   /*grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 20% 20% 20% 20% 20%;
@@ -191,60 +196,70 @@
   grid-column-start: 2;
   grid-column-end: 6;*/
 
-  color: #DDDDDD;
+  color: #dddddd;
   /*color: #818382;*/
   padding: 50px;
   text-align: center;
   font-size: 90px;
   font-weight: 100;
-  font-family: Butler,sans-serif;
+  font-family: Butler, sans-serif;
 }
 
 .frontPageBtn {
-  -moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
-  box-shadow:inset 0px 1px 0px 0px #bee2f9;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf));
-  background:-moz-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background:-webkit-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background:-o-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background:-ms-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf',GradientType=0);
-  background-color:#63b8ee;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  border:1px solid #3866a3;
-  display:inline-block;
-  cursor:pointer;
-  color:#14396a;
-  font-size:30px;
+  -moz-box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #63b8ee),
+    color-stop(1, #468ccf)
+  );
+  background: -moz-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+  background: -webkit-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+  background: -o-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+  background: -ms-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf',GradientType=0);
+  background-color: #63b8ee;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #3866a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #14396a;
+  font-size: 30px;
   font-weight: 500;
-  padding:12px 30px;
-  text-decoration:none;
-  font-family: Butler,sans-serif;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-family: Butler, sans-serif;
   margin: 20px;
 }
 
-
-.frontPageBtn:hover { 
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee));
-  background:-moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background:-webkit-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background:-o-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background:-ms-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background:linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0);
-  background-color:#468ccf;
+.frontPageBtn:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #468ccf),
+    color-stop(1, #63b8ee)
+  );
+  background: -moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+  background: -webkit-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+  background: -o-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+  background: -ms-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+  background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0);
+  background-color: #468ccf;
 }
 
 .frontPageBtn:active {
-  position:relative;
-  top:1px;
+  position: relative;
+  top: 1px;
 }
 
 .buttonMenu {
   align-content: center;
 }
-

@@ -1,23 +1,28 @@
 import React from "react";
+import shortid from "shortid";
 import "../App.css";
 
 export default class TodoForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { text: "" };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ text: event.target.value });
   }
 
   handleAdd(event) {
     event.preventDefault();
-    this.props.onAdd(this.state.value);
-    this.setState({ value: "" });
+    this.props.handleAdd({
+      key: shortid.generate(),
+      text: this.state.text,
+      complete: false,
+    });
+    this.setState({ text: "" });
   }
 
   render() {
@@ -25,12 +30,16 @@ export default class TodoForm extends React.Component {
       <div>
         <div className="todoForm">
           <form onSubmit={this.handleAdd}>
-            <input className="todoInput"
+            <input
+              className="todoInput"
+              name="text"
               placeholder="Skriv inn todo"
               onChange={this.handleChange}
-              value={this.state.value}
+              value={this.state.text}
             />
-            <button className="leggTil" onClick={this.handleAdd}>✔️</button>
+            <button className="leggTil" onClick={this.handleAdd}>
+              ✔️
+            </button>
           </form>
         </div>
       </div>
