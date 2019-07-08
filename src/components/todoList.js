@@ -13,6 +13,7 @@ export default class TodoList extends React.Component {
     this.checkIfEmpty = this.checkIfEmpty.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.deleteTodo = this.deleteTodo.bind(this);
+    this.showNumberOfTodo = this.showNumberOfTodo.bind(this);
   }
 
   checkIfEmpty(item) {
@@ -50,6 +51,13 @@ export default class TodoList extends React.Component {
     });
   }
 
+  showNumberOfTodo() {
+    if (this.props.enable >= 4) {
+      let timeToDoAlltask = this.state.todos.length*30
+      return timeToDoAlltask + " minutter for å gjøre det du skal"
+    }
+  }
+
   toggleComplete(key) {
     this.setState({
       todos: this.state.todos.map(todo => {
@@ -74,13 +82,15 @@ export default class TodoList extends React.Component {
         onDelete={() => this.deleteTodo(todo.item.key)}
       />
     ));
+    let showNumberOfTodo = this.showNumberOfTodo();
     return (
       <div>
         <div className="todoTitle"> Todo app</div>
         <TodoForm handleAdd={this.handleAdd} />
         {todos}
-        Antall gjøremål du har igjen er {this.state.todos.length}
+        {showNumberOfTodo}
       </div>
-    );
+    )
   }
 }
+

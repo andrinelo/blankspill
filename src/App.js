@@ -26,6 +26,7 @@ export default class App extends React.Component {
     this.question1 = this.question1.bind(this);
     this.question2 = this.question2.bind(this);
     this.question3 = this.question3.bind(this);
+    this.question4 = this.question4.bind(this);
   }
 
   componentDidMount() {
@@ -55,7 +56,7 @@ export default class App extends React.Component {
     } catch {
       alert(
         "Noe ble feil, sjekk at du har skrevet riktig navn på variabler og funksjoner, og at syntaksten er riktig.",
-      );
+      ); 
     }
   }
 
@@ -72,6 +73,10 @@ export default class App extends React.Component {
     this.setState({ question: 2, value: Questions[2].startValue });
   }
 
+  question4() {
+    this.setState({ question: 3, value: Questions[3].startValue })
+  }
+
   render() {
     return (
       <div className="container">
@@ -79,6 +84,7 @@ export default class App extends React.Component {
           <button className="taskBtn" onClick={this.question1}> Oppgave 1 </button>
           <button className="taskBtn" onClick={this.question2}> Oppgave 2 </button>
           <button className="taskBtn" onClick={this.question3}> Oppgave 3 </button>
+          <button className="taskBtn" onClick={this.question4}> Oppgave 4 </button>
         </div>
         <div className="app">
           <div>
@@ -104,7 +110,7 @@ export default class App extends React.Component {
             </div>
           </div>
           <div className = "todoList">
-            <TodoList  enable={this.state.question} />
+            <TodoList enable={this.state.question} />
           </div>
         </div>
       </div>
