@@ -12,7 +12,9 @@ class TodoListItem extends React.Component {
         <label for={this.props.todo.item.key}>
           {this.props.todo.item.text}
         </label>
-        <button onClick={this.props.onDelete}>X</button>
+        <button className="deleteButton" onClick={this.props.onDelete}>
+          X
+        </button>
       </div>
     );
   }

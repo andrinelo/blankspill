@@ -14,21 +14,7 @@
   padding-left: 16%;
 }
 
-.todoList {
-  display: flex;
-  width: 370px;
-  height: 480px;
-  margin-top: 20px;
-  font-family: Butler, sans-serif;
-  justify-content: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
-  margin-left: 5%;
-  border-radius: 5px;
-  background-color: #a1a3a2;
-}
-
+/* Todo appen  */
 .todoTitle {
   color: #000000;
   /*color: #818382;*/
@@ -37,21 +23,6 @@
   font-size: 40px;
   font-weight: 400;
   font-family: Butler, sans-serif;
-}
-
-.todoListItem {
-  background-color: rgba(16, 148, 162, 0.26);
-  margin: 1px;
-  width: 205px;
-  height: 20px;
-  padding-left: 10%;
-  border-radius: 6px;
-  margin-right: 4px;
-  max-width: 200px;
-  overflow: hidden; /*skjuler hvis man skriver for my*/
-}
-.todoListItem:hover {
-  text-decoration: line-through;
 }
 
 .todoInput {
@@ -70,8 +41,50 @@
   border: none;
   background-color: #4caf50;
 }
+.todoList {
+  display: flex;
+  width: 370px;
+  height: 480px;
+  margin-top: 20px;
+  font-family: Butler, sans-serif;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  margin-left: 5%;
+  border-radius: 5px;
+  background-color: #a1a3a2;
+}
 
-/*Dette er RUNKNAPPEN*/
+.todoListItem {
+  margin: 1px;
+  width: 205px;
+  height: 20px;
+  padding-left: 10%;
+  border-radius: 6px;
+  margin-right: 4px;
+  max-width: 200px;
+  overflow: hidden; /*skjuler hvis man skriver for mye*/
+}
+/* Skal fjernes
+.todoListItem:hover {
+  text-decoration: line-through;
+} */
+
+.deleteButton {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.deleteButton:hover {
+  font-weight: bold;
+}
+
+/*Dette er runknappen*/
 .button {
   display: flex;
   background-color: #4caf50; /* Green */
