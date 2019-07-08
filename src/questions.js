@@ -1,15 +1,15 @@
 var questions = [
   {
     q:
-      "Nå kan du ikke legge til nye todos i appen din. Prøv selv ved å skrive inn en todo og se hva som skjer 🚀 For å fikse dette - skriv ferdig funksjonen addTodo. Tips: hvis du skriver liste.push(listeElement) legger du til 'ListeElement' i listen 'liste'.",
+      "Nå kan du ikke legge til varer i handlelista. Prøv selv ved å skrive inn noe du vil kjøpe og se hva som skjer 🚀 For å fikse dette - skriv ferdig funksjonen 𝘢𝘥𝘥𝘐𝘵𝘦𝘮. Tips: du kan legge til noe i en liste ved å skrive liste.push(item) ",
     startValue:
-      "var todoList = [];\nfunction addTodo(todoItem){\n  //skriv din kode her\n  return todoList;\n}",
+      "var shoppingList = [];\nfunction addItem(item){\n  //skriv din kode her\n  return shoppingList;\n}",
     test: function test(input) {
-      let a = eval(input + "addTodo('kjøpe katt')");
+      let a = eval(input + "addItem('kjøpe katt')");
       if (a.toString) {
         if (
-          eval(input + "addTodo('kjøpe katt')").toString() !==
-          ["kjøpe katt"].toString()
+          eval(input + "addItem('sitron')").toString() !==
+          ["sitron"].toString()
         ) {
           return false;
         }

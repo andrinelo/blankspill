@@ -85,7 +85,7 @@ export default class TodoList extends React.Component {
     let showNumberOfTodo = this.showNumberOfTodo();
     return (
       <div>
-        <div className="todoTitle"> Todo app</div>
+        <div className="todoTitle"> Handleliste 🍋 </div>
         <TodoForm handleAdd={this.handleAdd} />
         {todos}
         {showNumberOfTodo}

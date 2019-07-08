@@ -80,7 +80,17 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="taskBar">
+        {/* <div className="taskBar">
+          {this.state.questions.map( (q) => {
+            
+            <button 
+              className="taskBtn" 
+              onClick={this.question1}
+              color={q.isPassed? 'red' : 'green'}
+            > Oppgave 1 </button>    
+
+          }} */}
+        <div className = "taskBar">
           <button className="taskBtn" onClick={this.question1}> Oppgave 1 </button>
           <button className="taskBtn" onClick={this.question2}> Oppgave 2 </button>
           <button className="taskBtn" onClick={this.question3}> Oppgave 3 </button>
