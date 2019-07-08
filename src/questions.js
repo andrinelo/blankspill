@@ -1,3 +1,6 @@
+import "./App.css";
+import React from "react";
+
 var questions = [
   {
     q:
@@ -5,7 +8,7 @@ var questions = [
     startValue:
       "var shoppingList = [];\nfunction addItem(item){\n  //skriv din kode her\n  return shoppingList;\n}",
     test: function test(input) {
-      let a = eval(input + "addItem('kjøpe katt')");
+      let a = eval(input + "addItem('sitron')");
       if (a.toString) {
         if (
           eval(input + "addItem('sitron')").toString() !==
@@ -20,9 +23,9 @@ var questions = [
   },
   {
     q:
-      "Nå kan man legge til tomme todos, det er ikke helt heldig. Test det selv 🔍 Skriv ferdig metoden checkIfEmpty ved å fullføre en 'if-statement' slik at man kan ikke kan legge til todos uten innhold ",
+      "Nå kan man legge til en 'tom vare', det er ikke helt heldig. Test det selv 🔍 Skriv ferdig metoden checkIfEmpty ved å fullføre en 'if-statement' for å rette opp i det ",
     startValue:
-      "let todoList =[];\nfunction checkIfEmpty(todoItem){\n  if (/*din kode her*/ === /*dine kode her*/){\n        return todoList;\n  }\n  else{\n    todoList.push(todoItem);\n    return todoList;\n  }\n}",
+      "let shoppingList =[];\nfunction checkIfEmpty(item){\n  if (/*din kode her*/ === /*dine kode her*/){\n        return shoppingList;\n  }\n  else{\n    todoList.push(todoItem);\n    return todoList;\n  }\n}",
     test: function test(input) {
       let a = eval(input + "checkIfEmpty('bli rik')");
       if (a.toString) {
@@ -51,7 +54,7 @@ var questions = [
   },
   {
     q:
-      "I JavaScript har man noen innebygde funksjoner man kan bruke til forskjellige ting. Splice() for eksempel kan brukes for å endre en liste. Den tar inn hvilket element man skal slette og hvor mange elementer fra og med det elementet. \n Nå kan man ikke slette todos, prøv selv 🔍 Skriv ferdig deleteTodo for å fikse det",
+      "I JavaScript har man noen innebygde funksjoner man kan bruke til forskjellige ting. Splice() til eksempel kan brukes for å endre en liste. Den tar inn hvilket element man skal slette og hvor mange elementer fra og med det elementet. \n Nå kan man ikke slette todos, prøv selv 🔍 Skriv ferdig deleteTodo for å fikse det",
     startValue:
       "function deleteTodo(todoList, todoItemNumber){\n  //skriv din kode her \n  return todoList;\n}",
     test: function test(input) {

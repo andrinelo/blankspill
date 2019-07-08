@@ -33,7 +33,7 @@ export default class TodoForm extends React.Component {
             <input
               className="todoInput"
               name="text"
-              placeholder="Skriv inn todo"
+              placeholder="Skriv det du skal handle"
               onChange={this.handleChange}
               value={this.state.text}
             />
