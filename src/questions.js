@@ -1,7 +1,7 @@
 var questions = [
   {
     q:
-      "Nå kan du ikke legge til nye todos i appen din. Prøv selv ved å skrive inn en todo og se hva som skjer 🚀 For å fikse dette - skriv ferdig funksjonen addTodo. Tips: hjelpefunksjonen push legger til et element i en liste",
+      "Nå kan du ikke legge til nye todos i appen din. Prøv selv ved å skrive inn en todo og se hva som skjer 🚀 For å fikse dette - skriv ferdig funksjonen addTodo. Tips: hvis du skriver liste.push(listeElement) legger du til 'ListeElement' i listen 'liste'.",
     startValue:
       "var todoList = [];\nfunction addTodo(todoItem){\n  //skriv din kode her\n  return todoList;\n}",
     test: function test(input) {
