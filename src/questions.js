@@ -80,11 +80,16 @@ var questions = [
     },
   },
   { 
-    q: "Man kan også gjøre regneoperasjoner. Si du ønsker å vite hvor mye tid det tar å gjøre ferdig alt du skal og du antar at hver oppgave tar 30 minutter. Skriv ferdig koden timeToFinishTodos() for å regne ut et estimat på dette", 
-    startValue: "function timeToFinishTodos(numberOfTodos){\n  timeToFinish = numberOfTodos*30;\n return \ntimeToFinish + 'minutter for å gjøre det du skal'\n} ",
+    q: "Man kan også gjøre regneoperasjoner. Si du ønsker å vite hvor mye tid det tar å gjøre ferdig alt du skal og du antar at hver oppgave tar 30 minutter. Skriv ferdig koden timeToFinishTodos() for å regne ut et estimat på hvor lang tid det tar å gjøre alt i todoappen din🧠", 
+    startValue: "function timeToFinishTodos(numberOfTodos){\n let timeForEachTask = 30;\n let timeToFinish = /*dine kode her*/;\n return timeToFinish +\n ' minutter for å gjøre det du skal';\n} ",
     test: function test(input){
-      if (eval(input + "timeToFinishTodos(5)" !== "150 minutter for å gjøre det du skal")){
-
+      let testNum = 5;
+      let a = eval(input + "timeToFinishTodos(testNum);");
+      console.log(a)
+      if (a !== '150 minutter for å gjøre det du skal'){
+        return false;
+        }
+      if (eval(input + "timeToFinishTodos(1);") !== '30 minutter for å gjøre det du skal'){
         return false;
         }
       return true;
