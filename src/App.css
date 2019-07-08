@@ -49,7 +49,7 @@
   font-family: Butler, sans-serif;
   justify-content: center;
   padding-left: 15px;
-  padding-right: 15px;
+  padding-right: 5px;
   padding-top: 10px;
   margin-left: 5%;
   border-radius: 5px;
@@ -57,13 +57,10 @@
 }
 
 .todoListItem {
-  margin: 1px;
-  width: 205px;
+  width: 300px;
   height: 20px;
-  padding-left: 10%;
-  border-radius: 6px;
-  margin-right: 4px;
-  max-width: 200px;
+  padding-left: 5px;
+  /* max-width: 200px; */
   overflow: hidden; /*skjuler hvis man skriver for mye*/
 }
 /* Skal fjernes
