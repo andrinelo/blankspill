@@ -24,8 +24,8 @@ export default class Video extends React.Component {
     this.videoSearch("Funny animals");
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-   // this.question1 = this.question1.bind(this);
-   // this.question2 = this.question2.bind(this);
+    // this.question1 = this.question1.bind(this);
+    // this.question2 = this.question2.bind(this);
   }
 
   videoSearch(searchTerm) {
@@ -52,7 +52,7 @@ export default class Video extends React.Component {
     }
   }
 
- /* question1() {
+  /* question1() {
     this.props.history.push("/game");
   }
 
@@ -70,11 +70,6 @@ export default class Video extends React.Component {
   render() {
     return (
       <div className="container">
-        {/* <div className="taskBar">
-          <button onClick={this.question1}> Tekst</button>
-          <button onClick={this.question2}> Funksjoner</button>
-          <button onClick={this.question3}> Video tutorial</button>
-        </div>*/}
         <div className="app">
           <div className="aceEditor">
             <AceEditor
@@ -83,8 +78,8 @@ export default class Video extends React.Component {
               value={this.state.value}
               onChange={this.handleChange}
               name="UNIQUE_ID_OF_DIV"
-              height='300px'
-              width='400px'
+              height="400px"
+              width="500px"
               editorProps={{
                 $blockScrolling: true,
               }}
@@ -99,7 +94,7 @@ export default class Video extends React.Component {
             <SearchBar
               onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}
             />
-            <div className="videoList">
+            <div>
               <VideoList
                 onVideoSelect={userSelected =>
                   this.setState({ selectedVideo: userSelected })

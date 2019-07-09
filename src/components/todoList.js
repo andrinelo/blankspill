@@ -17,7 +17,8 @@ export default class TodoList extends React.Component {
   }
 
   checkIfEmpty(item) {
-    if (item === "") {
+    console.log(item);
+    if (item.text === "") {
       return true;
     }
     return false;
@@ -53,11 +54,11 @@ export default class TodoList extends React.Component {
 
   showNumberOfTodo() {
     if (this.props.enable >= 4) {
-      let timeToDoAlltask = this.state.todos.length*30
-      return timeToDoAlltask + " minutter for å gjøre det du skal"
+      let timeToDoAlltask = this.state.todos.length * 30;
+      return timeToDoAlltask + " minutter for å gjøre det du skal";
     }
   }
-
+  /* Funker ikke sånn det skal */
   toggleComplete(key) {
     this.setState({
       todos: this.state.todos.map(todo => {
@@ -90,7 +91,6 @@ export default class TodoList extends React.Component {
         {todos}
         {showNumberOfTodo}
       </div>
-    )
+    );
   }
 }
-

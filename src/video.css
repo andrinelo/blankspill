@@ -1,28 +1,37 @@
 /* DETTE ER TIL VIDEO */
-
+.app {
+  display: flex;
+  flex-direction: row;
+  /*   flex-wrap: wrap; */
+  padding-top: 5%;
+  padding-left: 5%;
+}
 .videoPage {
   display: flex;
   flex-direction: column;
-  padding: 5em;
+  padding-left: 5%;
+  width: 650px;
 }
 
-.videoListItem {
+.videoList {
   display: flex;
   flex-direction: row;
-  background-color: orange;
   width: 10px;
   height: 10px;
 }
 
 .description {
-	font-size: 10px;
+  font-size: 10px;
 }
-
+.seachBarButton {
+  margin-left: 1%;
+}
 .videoContainer {
-	position:relative;
-	width: 640px;
-	height: 360px;
-
-
+  position: relative;
+  width: 640px;
+  height: 360px;
 }
 
+.videoListItem {
+  padding: 10px;
+}

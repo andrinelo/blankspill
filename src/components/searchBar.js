@@ -18,7 +18,9 @@ class SearchBar extends React.Component {
       <div>
         <label>Video Search</label>
         <input onChange={this.onInputChange} value={this.state.term} />
-        <button onClick={this.handleClick}>Søk</button>
+        <button className="seachBarButton" onClick={this.handleClick}>
+          Søk
+        </button>
       </div>
     );
   }
