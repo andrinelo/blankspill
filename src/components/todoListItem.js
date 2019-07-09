@@ -8,8 +8,12 @@ class TodoListItem extends React.Component {
           type="checkbox"
           id={this.props.todo.item.key}
           onClick={this.props.toggleComplete}
+          checked={this.props.todo.item.complete}
         />
-        <label for={this.props.todo.item.key}>
+        <label
+          className={this.props.todo.item.complete ? "todoListItemText" : ""}
+          for={this.props.todo.item.key}
+        >
           {this.props.todo.item.text}
         </label>
         <button className="deleteButton" onClick={this.props.onDelete}>

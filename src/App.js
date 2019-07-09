@@ -7,9 +7,6 @@ import AceEditor from "react-ace";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
 import { tsExternalModuleReference } from "@babel/types";
-//raggi const API_KEY = "AIzaSyDV7_3l00M-Tj_FPSR0Q3F78kO14jioJ1k";
-//andrine const API_KEY = "AIzaSyAdsAMX9HtHJeNfZgEmbdRsxZeyjnNpdFY";
-const API_KEY = "AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s";
 
 export default class App extends React.Component {
   constructor(props, context) {
@@ -56,7 +53,7 @@ export default class App extends React.Component {
     } catch {
       alert(
         "Noe ble feil, sjekk at du har skrevet riktig navn på variabler og funksjoner, og at syntaksten er riktig.",
-      ); 
+      );
     }
   }
 
@@ -74,7 +71,7 @@ export default class App extends React.Component {
   }
 
   question4() {
-    this.setState({ question: 3, value: Questions[3].startValue })
+    this.setState({ question: 3, value: Questions[3].startValue });
   }
 
   render() {
@@ -90,11 +87,23 @@ export default class App extends React.Component {
             > Oppgave 1 </button>    
 
           }} */}
-        <div className = "taskBar">
-          <button className="taskBtn" onClick={this.question1}> Oppgave 1 </button>
-          <button className="taskBtn" onClick={this.question2}> Oppgave 2 </button>
-          <button className="taskBtn" onClick={this.question3}> Oppgave 3 </button>
-          <button className="taskBtn" onClick={this.question4}> Oppgave 4 </button>
+        <div className="taskBar">
+          <button className="taskBtn" onClick={this.question1}>
+            {" "}
+            Oppgave 1{" "}
+          </button>
+          <button className="taskBtn" onClick={this.question2}>
+            {" "}
+            Oppgave 2{" "}
+          </button>
+          <button className="taskBtn" onClick={this.question3}>
+            {" "}
+            Oppgave 3{" "}
+          </button>
+          <button className="taskBtn" onClick={this.question4}>
+            {" "}
+            Oppgave 4{" "}
+          </button>
         </div>
         <div className="app">
           <div>
@@ -108,8 +117,8 @@ export default class App extends React.Component {
                 value={this.state.value}
                 onChange={this.handleChange}
                 name="UNIQUE_ID_OF_DIV"
-                height='200px'
-                width='400px'
+                height="200px"
+                width="400px"
                 editorProps={{
                   $blockScrolling: true,
                 }}
@@ -119,7 +128,7 @@ export default class App extends React.Component {
               </button>
             </div>
           </div>
-          <div className = "todoList">
+          <div className="todoList">
             <TodoList enable={this.state.question} />
           </div>
         </div>
