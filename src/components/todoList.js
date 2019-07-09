@@ -16,30 +16,30 @@ export default class TodoList extends React.Component {
     this.showNumberOfTodo = this.showNumberOfTodo.bind(this);
   }
 
-  checkIfEmpty(item) {
-    console.log(item);
-    if (item.text === "") {
+  checkIfEmpty(todo) {
+    if (todo.text === "") {
       return true;
     }
     return false;
   }
   //Legger todoen til i listen
-  addTodo(item) {
+  addTodo(todo) {
     this.setState({
-      todos: [...this.state.todos, { item }],
+      todos: [...this.state.todos, todo],
     });
   }
   //dealer med hva som skal skje mtp hvilke oppgave de er på
-  handleAdd(item) {
+  handleAdd(todo) {
+    console.log(todo);
     const warning = "Du må skrive en todo først";
     if (this.props.enable >= 2) {
-      if (this.checkIfEmpty(item)) {
+      if (this.checkIfEmpty(todo)) {
         alert(warning);
       } else {
-        this.addTodo(item);
+        this.addTodo(todo);
       }
     } else if (this.props.enable >= 1) {
-      this.addTodo(item);
+      this.addTodo(todo);
     } else {
       alert("Du må gjøre oppgave 1 først");
       return false;
@@ -48,7 +48,7 @@ export default class TodoList extends React.Component {
 
   deleteTodo(key) {
     this.setState({
-      todos: this.state.todos.filter(todo => todo.item.key !== key),
+      todos: this.state.todos.filter(todo => todo.key !== key),
     });
   }
 
@@ -62,7 +62,7 @@ export default class TodoList extends React.Component {
   toggleComplete(key) {
     this.setState({
       todos: this.state.todos.map(todo => {
-        if (todo.item.key === key) {
+        if (todo.key === key) {
           return {
             ...todo,
             complete: !todo.complete,
@@ -77,10 +77,10 @@ export default class TodoList extends React.Component {
   render() {
     let todos = this.state.todos.map(todo => (
       <TodoListItem
-        key={todo.item.key}
-        toggleComplete={() => this.toggleComplete(todo.item.key)}
+        key={todo.key}
+        toggleComplete={() => this.toggleComplete(todo.key)}
         todo={todo}
-        onDelete={() => this.deleteTodo(todo.item.key)}
+        onDelete={() => this.deleteTodo(todo.key)}
       />
     ));
     let showNumberOfTodo = this.showNumberOfTodo();

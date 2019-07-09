@@ -6,15 +6,15 @@ class TodoListItem extends React.Component {
       <div className="todoListItem">
         <input
           type="checkbox"
-          id={this.props.todo.item.key}
+          id={this.props.todo.key}
           onClick={this.props.toggleComplete}
-          checked={this.props.todo.item.complete}
+          checked={this.props.todo.complete}
         />
         <label
-          className={this.props.todo.item.complete ? "todoListItemText" : ""}
-          for={this.props.todo.item.key}
+          className={this.props.todo.complete ? "todoListItemText" : ""}
+          for={this.props.todo.key}
         >
-          {this.props.todo.item.text}
+          {this.props.todo.text}
         </label>
         <button className="deleteButton" onClick={this.props.onDelete}>
           X
