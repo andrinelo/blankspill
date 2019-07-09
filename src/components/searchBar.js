@@ -15,9 +15,13 @@ class SearchBar extends React.Component {
   }
   render() {
     return (
-      <div>
-        <label>Video Search</label>
-        <input onChange={this.onInputChange} value={this.state.term} />
+      <div className="searchBar">
+        <input 
+          className="searchBarInput" 
+          onChange={this.onInputChange} 
+          value={this.state.term} 
+          placeholder="Learn javascript if statements"
+        />
         <button className="seachBarButton" onClick={this.handleClick}>
           Søk
         </button>

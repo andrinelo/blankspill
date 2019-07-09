@@ -1,10 +1,35 @@
 /* DETTE ER TIL VIDEO */
+.header {
+  color: #818382;
+  padding: 50px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 100;
+  font-family: Butler, sans-serif;
+
+}
+
+.header:after{
+  content:'';
+  display: block;
+  width: 90%;
+  border: 2px solid #d0d0d0;
+  border-radius:4px;
+  margin: 0 auto;
+}
+
+/*EDITORSIDE*/
 .appVideo {
   display: flex;
   flex-direction: row;
-  padding-top: 5%;
-  padding-left: 5%;
+  justify-content: center;
 }
+
+.output {
+  color: white;
+}
+
+/*VIDEOSIDEN*/
 .videoPage {
   display: flex;
   flex-direction: column;
@@ -22,15 +47,57 @@
 .description {
   font-size: 10px;
 }
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+  padding: 5px;
+  font-family: Butler, sans-serif;
+}
+.searchBarInput {
+  width: 700px;
+  background-color: #dddddd;
+  border-radius: 2px;
+}
+
 .seachBarButton {
   margin-left: 1%;
+  font-family: Butler, sans-serif;
 }
+
 .videoContainer {
-  position: relative;
-  width: 640px;
-  height: 360px;
+
+  width: 740px;
+  height: 400px;
 }
 
 .videoListItem {
   padding: 10px;
+
+}
+
+/*appVideo = hele
+aceEditor = editor, run, output
+videoPage = søkebar, video, videodet, de små videoen*/
+
+
+/*display when screen gets small*/
+@media all and (max-width: 1150px) {
+  .appVideo {
+    display: none;
+  }
+  .smallScreen {
+    display: block;
+    font-size: 200px;
+    margin: 0 auto;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+}
+
+@media all and (min-width: 1150px){
+  .smallScreen {
+  display:none;
+  }
 }

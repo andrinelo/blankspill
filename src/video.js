@@ -70,6 +70,9 @@ export default class Video extends React.Component {
   render() {
     return (
       <div className="container">
+        <div className="header">
+        JavaScript Programmering
+        </div>
         <div className="appVideo">
           <div className="aceEditor">
             <AceEditor
@@ -78,7 +81,7 @@ export default class Video extends React.Component {
               value={this.state.value}
               onChange={this.handleChange}
               name="UNIQUE_ID_OF_DIV"
-              height="400px"
+              height="460px"
               width="500px"
               editorProps={{
                 $blockScrolling: true,
@@ -87,7 +90,7 @@ export default class Video extends React.Component {
             <button className="button" onClick={this.handleClick}>
               Run
             </button>
-            <div>{this.state.result}</div>
+            <div className="output">{this.state.result}</div>
           </div>
           <div className="videoPage">
             <VideoDetail video={this.state.selectedVideo} />
