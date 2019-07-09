@@ -2,7 +2,6 @@
 .appVideo {
   display: flex;
   flex-direction: row;
-  /*   flex-wrap: wrap; */
   padding-top: 5%;
   padding-left: 5%;
 }

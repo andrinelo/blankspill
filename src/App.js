@@ -117,8 +117,8 @@ export default class App extends React.Component {
                 value={this.state.value}
                 onChange={this.handleChange}
                 name="UNIQUE_ID_OF_DIV"
-                height="200px"
-                width="400px"
+                height='300px'
+                width='500px'
                 editorProps={{
                   $blockScrolling: true,
                 }}
@@ -132,6 +132,9 @@ export default class App extends React.Component {
             <TodoList enable={this.state.question} />
           </div>
         </div>
+        <span className="smallScreen">
+          💻 
+        </span>
       </div>
     );
   }

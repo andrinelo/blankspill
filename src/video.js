@@ -104,6 +104,9 @@ export default class Video extends React.Component {
             </div>
           </div>
         </div>
+        <span className="smallScreen">
+          💻 
+        </span>
       </div>
     );
   }

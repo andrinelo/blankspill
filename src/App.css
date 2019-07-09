@@ -10,17 +10,31 @@
 .app {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  padding-left: 16%;
+  /*flex-wrap: wrap; gjør ingenting?*/ 
+  margin: 0 auto; /*ting blir center*/
+  padding-left: 1fr;
+  padding-right: 1fr;
 }
 
 /* Todo appen  */
+.todoList {
+  display: flex;
+  width: 430px;
+  height: 541px;
+  margin-top: 80px;
+  font-family: Butler, sans-serif;
+  justify-content: center;
+  border-radius: 5px;
+  margin-left: 5%;
+  background-color: #a1a3a2;
+}
+
 .todoTitle {
   color: #000000;
-  padding: 5px;
   text-align: center;
   font-size: 40px;
   font-weight: 400;
+  padding-top:10px;
   font-family: Butler, sans-serif;
 }
 
@@ -38,28 +52,14 @@
   width: 40px;
   text-align: center;
   border: none;
+  height: 21px; /*default så kan fjernes*/
   background-color: #4caf50;
-}
-.todoList {
-  display: flex;
-  width: 370px;
-  height: 480px;
-  margin-top: 20px;
-  font-family: Butler, sans-serif;
-  justify-content: center;
-  padding-left: 15px;
-  padding-right: 5px;
-  padding-top: 10px;
-  margin-left: 5%;
-  border-radius: 5px;
-  background-color: #a1a3a2;
 }
 
 .todoListItem {
   width: 300px;
   height: 20px;
   padding-left: 5px;
-  /* max-width: 200px; */
   overflow: hidden; /*skjuler hvis man skriver for mye*/
 }
 
@@ -93,29 +93,29 @@
   font-family: Butler, sans-serif;
 }
 
-/*Dette er oppgavene */
+/*Dette er oppgaveboksen */
 .task {
   display: flex;
-  width: 350px;
-  height: 45%;
-  border: 5px;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  width: 500px;
+  height: 220px;
   font-family: Butler, sans-serif;
   background-color: #a1a3a2;
   border-radius: 5px;
-  justify-content: center;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
+  margin-top: 80px;
+  margin-bottom: 5%;
 }
+
+.question {
+  padding: 20px;
+}
+
+/*dette er oppgavemenyen*/
 
 .taskBar {
   display: flex;
   justify-content: center;
-  padding-left: 1%;
-  margin-right: 400px;
   align-items: flex-end;
+  margin-top: 10px;
 }
 
 .taskBtn {
@@ -200,12 +200,6 @@
 
 .frontPageHeader {
   display: grid;
-  /*grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
-
-  grid-column-start: 2;
-  grid-column-end: 6;*/
-
   color: #dddddd;
   /*color: #818382;*/
   padding: 50px;
@@ -274,10 +268,30 @@
   align-content: center;
 }
 
-/*questionnzz*/
 
-.code {
-  color: blue;
-  text-decoration: bold;
-  text-size: 1em;
+/*display when screen gets small*/
+@media all and (max-width: 992px) {
+  .app {
+    display: none;
+  }
+  .taskBar {
+    display: none;
+  }
+  .frontPage {
+    display: none;
+  }
+  .smallScreen {
+    display: block;
+    font-size: 200px;
+    margin: 0 auto;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
 }
+
+@media all and (min-width: 993px){
+  .smallScreen {
+  display:none;
+  }
+}
+
