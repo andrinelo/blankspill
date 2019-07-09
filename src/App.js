@@ -89,20 +89,16 @@ export default class App extends React.Component {
           }} */}
         <div className="taskBar">
           <button className="taskBtn" onClick={this.question1}>
-            {" "}
-            Oppgave 1{" "}
+            Oppgave 1
           </button>
           <button className="taskBtn" onClick={this.question2}>
-            {" "}
-            Oppgave 2{" "}
+            Oppgave 2
           </button>
           <button className="taskBtn" onClick={this.question3}>
-            {" "}
-            Oppgave 3{" "}
+            Oppgave 3
           </button>
           <button className="taskBtn" onClick={this.question4}>
-            {" "}
-            Oppgave 4{" "}
+            Oppgave 4
           </button>
         </div>
         <div className="app">
@@ -117,8 +113,8 @@ export default class App extends React.Component {
                 value={this.state.value}
                 onChange={this.handleChange}
                 name="UNIQUE_ID_OF_DIV"
-                height='300px'
-                width='500px'
+                height="300px"
+                width="500px"
                 editorProps={{
                   $blockScrolling: true,
                 }}
@@ -132,9 +128,7 @@ export default class App extends React.Component {
             <TodoList enable={this.state.question} />
           </div>
         </div>
-        <span className="smallScreen">
-          💻 
-        </span>
+        <span className="smallScreen">💻</span>
       </div>
     );
   }

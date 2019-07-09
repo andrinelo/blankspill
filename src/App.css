@@ -10,7 +10,7 @@
 .app {
   display: flex;
   flex-direction: row;
-  /*flex-wrap: wrap; gjør ingenting?*/ 
+  /*flex-wrap: wrap; gjør ingenting?*/
   margin: 0 auto; /*ting blir center*/
   padding-left: 1fr;
   padding-right: 1fr;
@@ -34,7 +34,7 @@
   text-align: center;
   font-size: 40px;
   font-weight: 400;
-  padding-top:10px;
+  padding-top: 10px;
   font-family: Butler, sans-serif;
 }
 
@@ -63,8 +63,18 @@
   overflow: hidden; /*skjuler hvis man skriver for mye*/
 }
 
-.todoListItemText {
+.checkbox:hover {
+  cursor: pointer;
+}
+.completed {
   text-decoration: line-through;
+}
+
+.completed:hover {
+  cursor: pointer;
+}
+.uncompleted:hover {
+  cursor: pointer;
 }
 
 .deleteButton {
@@ -268,7 +278,6 @@
   align-content: center;
 }
 
-
 /*display when screen gets small*/
 @media all and (max-width: 992px) {
   .app {
@@ -289,9 +298,8 @@
   }
 }
 
-@media all and (min-width: 993px){
+@media all and (min-width: 993px) {
   .smallScreen {
-  display:none;
+    display: none;
   }
 }
-

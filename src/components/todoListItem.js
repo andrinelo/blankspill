@@ -5,13 +5,14 @@ class TodoListItem extends React.Component {
     return (
       <div className="todoListItem">
         <input
+          className="checkbox"
           type="checkbox"
           id={this.props.todo.key}
           onClick={this.props.toggleComplete}
           checked={this.props.todo.complete}
         />
         <label
-          className={this.props.todo.complete ? "todoListItemText" : ""}
+          className={this.props.todo.complete ? "completed" : "uncompleted"}
           for={this.props.todo.key}
         >
           {this.props.todo.text}
