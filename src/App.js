@@ -4,6 +4,14 @@ import TodoList from "./components/todoList.js";
 import "./App.css";
 import brace from "brace";
 import AceEditor from "react-ace";
+import Alert from "react-s-alert";
+import "react-s-alert/dist/s-alert-css-effects/slide.css";
+import "react-s-alert/dist/s-alert-css-effects/scale.css";
+import "react-s-alert/dist/s-alert-css-effects/bouncyflip.css";
+import "react-s-alert/dist/s-alert-css-effects/flip.css";
+import "react-s-alert/dist/s-alert-css-effects/genie.css";
+import "react-s-alert/dist/s-alert-css-effects/jelly.css";
+import "react-s-alert/dist/s-alert-css-effects/stackslide.css";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
 import { tsExternalModuleReference } from "@babel/types";
@@ -41,6 +49,11 @@ export default class App extends React.Component {
       const test = Questions[this.state.question].test;
       console.log(test);
       if (test(this.state.value)) {
+        Alert.success("Gratulerer, du klarte oppgaven", {
+          position: "bottom-left",
+          effect: "jelly",
+          timeout: "3000",
+        });
         this.setState({
           question: this.state.question + 1,
           value: Questions[this.state.question + 1].startValue,

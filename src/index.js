@@ -6,6 +6,8 @@ import App from "./App";
 import Video from "./video";
 import Frontpage from "./frontpage.js";
 import Notfound from "./components/notfound.js";
+import Alert from "react-s-alert";
+import "react-s-alert/dist/s-alert-default.css";
 
 const routing = (
   <Router>
@@ -16,6 +18,7 @@ const routing = (
         <Route exact path="/" component={Frontpage} />
         <Route component={Notfound} />
       </Switch>
+      <Alert stack={{ limit: 3 }} />
     </div>
   </Router>
 );
