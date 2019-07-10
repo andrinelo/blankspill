@@ -21,7 +21,7 @@ export default class Video extends React.Component {
       videos: [],
       selectedVideo: null,
     };
-    this.videoSearch("Funny animals");
+    this.videoSearch("Javascript for loops");
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     // this.question1 = this.question1.bind(this);
@@ -30,7 +30,7 @@ export default class Video extends React.Component {
 
   videoSearch(searchTerm) {
     YTSearch({ key: API_KEY, term: searchTerm }, data => {
-      const chosenData = [data[0], data[1], data[2]];
+      const chosenData = [data[0], data[1], data[2], data[3]];
       this.setState({
         videos: chosenData,
         selectedVideo: data[0],
