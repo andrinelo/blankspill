@@ -21,13 +21,10 @@ export default class App extends React.Component {
     super(props, context);
     this.state = {
       value: Questions[0].startValue,
-      result: "",
       question: 0,
-      videos: [],
-      selectedVideo: null,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClickRun = this.handleClickRun.bind(this);
     this.question1 = this.question1.bind(this);
     this.question2 = this.question2.bind(this);
     this.question3 = this.question3.bind(this);
@@ -44,7 +41,7 @@ export default class App extends React.Component {
     this.setState({ value: newValue });
   };
 
-  handleClick() {
+  handleClickRun() {
     try {
       const test = Questions[this.state.question].test;
       console.log(test);
@@ -126,6 +123,9 @@ export default class App extends React.Component {
         <div className="app">
           <div>
             <div className="task">
+              <div className="questionTitle">
+                Oppgave {this.state.question + 1}
+              </div>
               <p className="question">{Questions[this.state.question].q}</p>
             </div>
             <div className="aceEditor">
@@ -141,7 +141,7 @@ export default class App extends React.Component {
                   $blockScrolling: true,
                 }}
               />
-              <button className="button" onClick={this.handleClick}>
+              <button className="button" onClick={this.handleClickRun}>
                 Run
               </button>
             </div>
