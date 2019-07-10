@@ -40,8 +40,9 @@
 .videoList {
   display: flex;
   flex-direction: row;
-  width: 10px;
   height: 10px;
+  width: 20px;
+  justify-content: right;
 }
 
 .description {
@@ -72,8 +73,11 @@
   height: 400px;
 }
 
+
+
 .videoListItem {
-  padding: 10px;
+
+  padding-right: 40px;
 
 }
 
