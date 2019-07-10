@@ -5,13 +5,13 @@ import "./App.css";
 import brace from "brace";
 import AceEditor from "react-ace";
 import Alert from "react-s-alert";
-import "react-s-alert/dist/s-alert-css-effects/slide.css";
-import "react-s-alert/dist/s-alert-css-effects/scale.css";
-import "react-s-alert/dist/s-alert-css-effects/bouncyflip.css";
-import "react-s-alert/dist/s-alert-css-effects/flip.css";
-import "react-s-alert/dist/s-alert-css-effects/genie.css";
+//import "react-s-alert/dist/s-alert-css-effects/slide.css";
+//import "react-s-alert/dist/s-alert-css-effects/scale.css";
+//import "react-s-alert/dist/s-alert-css-effects/bouncyflip.css";
+//import "react-s-alert/dist/s-alert-css-effects/flip.css";
+//import "react-s-alert/dist/s-alert-css-effects/genie.css";
 import "react-s-alert/dist/s-alert-css-effects/jelly.css";
-import "react-s-alert/dist/s-alert-css-effects/stackslide.css";
+//import "react-s-alert/dist/s-alert-css-effects/stackslide.css";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
 import { tsExternalModuleReference } from "@babel/types";
@@ -22,6 +22,7 @@ export default class App extends React.Component {
     this.state = {
       value: Questions[0].startValue,
       question: 0,
+      completed: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClickRun = this.handleClickRun.bind(this);
@@ -33,8 +34,15 @@ export default class App extends React.Component {
 
   componentDidMount() {
     const hState = this.props.history.location.state;
-    if (!!hState && !!hState.question)
+    if (!!hState && !!hState.question) {
       this.setState({ question: hState.question });
+    }
+    var i;
+    var completed = [];
+    for (i = 0; i < Questions.length; i++) {
+      completed.push(false);
+    }
+    this.setState({ completed: completed });
   }
 
   handleChange = newValue => {
@@ -44,7 +52,6 @@ export default class App extends React.Component {
   handleClickRun() {
     try {
       const test = Questions[this.state.question].test;
-      console.log(test);
       if (test(this.state.value)) {
         Alert.success("Gratulerer, du klarte oppgaven", {
           position: "bottom-left",
@@ -54,9 +61,12 @@ export default class App extends React.Component {
         this.setState({
           question: this.state.question + 1,
           value: Questions[this.state.question + 1].startValue,
+          /* completed: this.state.completed.map(i => {
+            if(){
+            return !i;
+          }}),*/
         });
       } else {
-        //kan legge inn feilmelding her
         //kjøres hvis syntaks er riktig, men feil logikk
         Alert.warning("Det ble feil, prøv en gang til :)", {
           position: "bottom-left",
@@ -107,16 +117,28 @@ export default class App extends React.Component {
 
           }} */}
         <div className="taskBar">
-          <button className="taskBtn" onClick={this.question1}>
+          <button
+            className={this.state.question === 0 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question1}
+          >
             Oppgave 1
           </button>
-          <button className="taskBtn" onClick={this.question2}>
+          <button
+            className={this.state.question === 1 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question2}
+          >
             Oppgave 2
           </button>
-          <button className="taskBtn" onClick={this.question3}>
+          <button
+            className={this.state.question === 2 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question3}
+          >
             Oppgave 3
           </button>
-          <button className="taskBtn" onClick={this.question4}>
+          <button
+            className={this.state.question === 3 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question4}
+          >
             Oppgave 4
           </button>
         </div>

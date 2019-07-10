@@ -104,7 +104,7 @@ var questions = [
     q: "Oppgave 5",
     startValue: "//meow",
     test: function test(input) {},
-  },
+  } /* 
   {
     q: "Lag en funksjon med navn multiplication som ganger to tall",
     startValue:
@@ -118,7 +118,7 @@ var questions = [
       }
       return true;
     },
-  },
+  }, */,
 ];
 
 export default questions;
