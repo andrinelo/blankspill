@@ -54,6 +54,9 @@
   border: none;
   height: 21px; /*default så kan fjernes*/
   background-color: #4caf50;
+  box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  border-radius: 6px;
+  border: 1px solid #3866a3;
 }
 
 .leggTil:hover {
