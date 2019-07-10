@@ -38,7 +38,7 @@ export default class TodoForm extends React.Component {
               value={this.state.text}
             />
             <button className="leggTil" onClick={this.handleAdd}>
-              ✔️
+              Legg til
             </button>
           </form>
         </div>

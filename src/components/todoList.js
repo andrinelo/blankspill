@@ -1,6 +1,8 @@
 import React from "react";
 import TodoForm from "./todoForm";
 import TodoListItem from "./todoListItem";
+import Alert from "react-s-alert";
+import "react-s-alert/dist/s-alert-css-effects/jelly.css";
 import "../App.css";
 
 export default class TodoList extends React.Component {
@@ -34,14 +36,22 @@ export default class TodoList extends React.Component {
     const warning = "Du må skrive en todo først";
     if (this.props.enable >= 2) {
       if (this.checkIfEmpty(todo)) {
-        alert(warning);
+        Alert.warning(warning, {
+          position: "top-right",
+          effect: "jelly",
+          timeout: 4000,
+        });
       } else {
         this.addTodo(todo);
       }
     } else if (this.props.enable >= 1) {
       this.addTodo(todo);
     } else {
-      alert("Du må gjøre oppgave 1 først");
+      Alert.warning("Du må gjøre oppgave 1 først", {
+        position: "top-right",
+        effect: "jelly",
+        timeout: 4000,
+      });
       return false;
     }
   }

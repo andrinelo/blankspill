@@ -6,6 +6,8 @@ import YTSearch from "youtube-api-search";
 import "./App.css";
 import brace from "brace";
 import AceEditor from "react-ace";
+import Alert from "react-s-alert";
+import "react-s-alert/dist/s-alert-css-effects/jelly.css";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
 //raggi const API_KEY = "AIzaSyDV7_3l00M-Tj_FPSR0Q3F78kO14jioJ1k";
@@ -48,7 +50,11 @@ export default class Video extends React.Component {
       this.setState({ result: result });
     } catch {
       this.setState({ result: "" });
-      alert("ikke godkjent javascript-syntaks");
+      Alert.error("ikke godkjent javascript-syntaks", {
+        position: "bottom-left",
+        effect: "jelly",
+        timeout: 4000,
+      });
     }
   }
 
@@ -70,9 +76,7 @@ export default class Video extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="header">
-        JavaScript Programmering
-        </div>
+        <div className="header">JavaScript Programmering</div>
         <div className="appVideo">
           <div className="aceEditor">
             <AceEditor
@@ -107,9 +111,7 @@ export default class Video extends React.Component {
             </div>
           </div>
         </div>
-        <span className="smallScreen">
-          💻 
-        </span>
+        <span className="smallScreen">💻</span>
       </div>
     );
   }

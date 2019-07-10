@@ -52,7 +52,7 @@ export default class App extends React.Component {
         Alert.success("Gratulerer, du klarte oppgaven", {
           position: "bottom-left",
           effect: "jelly",
-          timeout: "3000",
+          timeout: 3000,
         });
         this.setState({
           question: this.state.question + 1,
@@ -61,11 +61,20 @@ export default class App extends React.Component {
       } else {
         //kan legge inn feilmelding her
         //kjøres hvis syntaks er riktig, men feil logikk
-        alert("Det ble feil, prøv en gang til :)");
+        Alert.warning("Det ble feil, prøv en gang til :)", {
+          position: "bottom-left",
+          effect: "jelly",
+          timeout: 4000,
+        });
       }
     } catch {
-      alert(
+      Alert.error(
         "Noe ble feil, sjekk at du har skrevet riktig navn på variabler og funksjoner, og at syntaksten er riktig.",
+        {
+          position: "bottom-left",
+          effect: "jelly",
+          timeout: 5000,
+        },
       );
     }
   }
