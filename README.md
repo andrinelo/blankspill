@@ -1,4 +1,4 @@
-## {Navn} 🚀
+## blanke ark 🚀
 
 {Navn} er en kodeplattform for folk uten kjennskap til programmering hvor man enten kan visualisere hva man kan få til med programmering eller kan både kode og se en programmeringtutorial i browseren.
 
