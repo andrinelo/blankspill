@@ -65,7 +65,7 @@ export default class TodoList extends React.Component {
   showNumberOfTodo() {
     if (this.props.enable >= 4) {
       let timeToDoAlltask = this.state.todos.length * 30;
-      return timeToDoAlltask + " minutter for å gjøre det du skal";
+      return timeToDoAlltask + " kroner for alt du skal ha";
     }
   }
   /* Funker ikke sånn det skal */

@@ -1,7 +1,24 @@
 import React from "react";
 
+
+
 class TodoListItem extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.itemToShow = this.itemToShow.bind(this);
+  }
+
+  itemToShow(){
+    if (this.props.todo.text.length > 18) {
+    return this.props.todo.text.substring(0,18) + "...";
+  }
+    else {
+      return this.props.todo.text;
+    }
+  }
+
   render() {
+    let todo = this.itemToShow();
     return (
       <div className="todoListItem">
         <input
@@ -15,7 +32,7 @@ class TodoListItem extends React.Component {
           className={this.props.todo.complete ? "completed" : "uncompleted"}
           for={this.props.todo.key}
         >
-          {this.props.todo.text}
+          {todo}
         </label>
         <button className="deleteButton" onClick={this.props.onDelete}>
           X
