@@ -10,31 +10,124 @@
 .app {
   display: flex;
   flex-direction: row;
-  /*flex-wrap: wrap; gjør ingenting?*/
   margin: 0 auto; /*ting blir center*/
   padding-left: 1fr;
   padding-right: 1fr;
 }
 
+/*dette er oppgavemenyen*/
+
+.taskBar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.taskBtn {
+  box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  background-color: #63b8ee;
+  border-radius: 6px;
+  border: 1px solid #3866a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #14396a;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-family: Butler, sans-serif;
+  margin: 5px;
+}
+
+.taskBtn:hover {
+  background-color: #468ccf;
+}
+
+.taskBtn:active {
+  position: relative;
+  top: 1px;
+}
+.activeTaskBtn {
+  background-color: #468ccf;
+  border-radius: 6px;
+  border: 1px solid #3866a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #14396a;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-family: Butler, sans-serif;
+  margin: 5px;
+}
+
+/*Dette er oppgaveboksen */
+.task {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 220px;
+  font-family: Butler, sans-serif;
+  background-color: #a1a3a2;
+  border-radius: 5px;
+  margin-top: 80px;
+  margin-bottom: 5%;
+}
+.questionTitle {
+  color: #000000;
+  /* text-align: center; */
+  font-size: 30px;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-family: Butler, sans-serif;
+}
+.question {
+  padding: 10px;
+}
+
+/*Dette er runknappen*/
+.button {
+  display: flex;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: black;
+  padding: 5px 15px;
+  text-align: center;
+  font-size: 16px;
+  float: right;
+  font-family: Butler, sans-serif;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #439b48;
+}
+
 /* Todo appen  */
-.todoList {
+.todoListPage {
   display: flex;
   width: 430px;
   height: 541px;
   margin-top: 80px;
   font-family: Butler, sans-serif;
-  justify-content: center;
+  justify-content: flex-start;
   border-radius: 5px;
   margin-left: 5%;
   background-color: #a1a3a2;
 }
+.todoList {
+  margin-left: 60px;
+}
 
 .todoTitle {
   color: #000000;
-  text-align: center;
+  text-align: flex-start;
   font-size: 40px;
   font-weight: 400;
   padding-top: 10px;
+  padding-bottom: 5px;
   font-family: Butler, sans-serif;
 }
 
@@ -44,6 +137,7 @@
   background-color: #dddddd;
   border-radius: 3px;
   border: none;
+  margin-bottom: 5px;
 }
 
 .leggTil {
@@ -51,22 +145,21 @@
   font-size: 12px;
   width: 60px;
   text-align: center;
-  border: none;
   height: 21px; /*default så kan fjernes*/
   background-color: #4caf50;
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
   border-radius: 6px;
-  border: 1px solid #3866a3;
+  border: 1px solid #318e35;
 }
 
 .leggTil:hover {
   cursor: pointer;
-  background-color: #3d8f41;
+  background-color: #439b48;
 }
 .todoListItem {
   width: 300px;
   height: 20px;
-  padding-left: 5px;
+  /* padding-left: 5px; */
   overflow: hidden; /*skjuler hvis man skriver for mye*/
 }
 
@@ -97,118 +190,9 @@
   font-weight: bold;
 }
 
-/*Dette er runknappen*/
-.button {
-  display: flex;
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: black;
-  padding: 5px 15px;
-  text-align: center;
-  font-size: 16px;
-  float: right;
-  font-family: Butler, sans-serif;
-}
-.button:hover {
-  cursor: pointer;
-  background-color: #3d8f41;
-}
-
-/*Dette er oppgaveboksen */
-.task {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 220px;
-  font-family: Butler, sans-serif;
-  background-color: #a1a3a2;
-  border-radius: 5px;
-  margin-top: 80px;
-  margin-bottom: 5%;
-}
-.questionTitle {
-  color: #000000;
-  /* text-align: center; */
-  font-size: 30px;
-  font-weight: 400;
-  padding-top: 10px;
-  padding-left: 10px;
-  font-family: Butler, sans-serif;
-}
-.question {
-  padding: 10px;
-}
-
-/*dette er oppgavemenyen*/
-
-.taskBar {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin-top: 10px;
-}
-
-.taskBtn {
-  -moz-box-shadow: inset 0px 1px 0px 0px #bee2f9;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #bee2f9;
-  box-shadow: inset 0px 1px 0px 0px #bee2f9;
-  background-color: #63b8ee;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #3866a3;
-  display: inline-block;
-  cursor: pointer;
-  color: #14396a;
-  font-size: 10px;
-  font-weight: 600;
-  padding: 5px 5px;
-  text-decoration: none;
-  font-family: Butler, sans-serif;
-  margin: 5px;
-}
-
-.taskBtn:hover {
-  background-color: #468ccf;
-}
-
-.taskBtn:active {
-  position: relative;
-  top: 1px;
-}
-.activeTaskBtn {
-  background-color: #468ccf;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #3866a3;
-  display: inline-block;
-  cursor: pointer;
-  color: #14396a;
-  font-size: 10px;
-  font-weight: 600;
-  padding: 5px 5px;
-  text-decoration: none;
-  font-family: Butler, sans-serif;
-  margin: 5px;
-}
-
-/* DETTE ER TIL TODO */
-
-.todoApp {
-  padding-top: 7%;
-  padding-left: 7%;
-}
-/*funker ikke */
-.todoForm {
-  display: flex;
-  flex-direction: row;
-}
-
 /* DETTE ER TIL FRONTPAGE */
 
 .frontPage {
-  /*background-color: #161617;*/
   background-color: #39393b;
   position: fixed;
   width: 100%;
@@ -221,7 +205,6 @@
 .frontPageHeader {
   display: grid;
   color: #dddddd;
-  /*color: #818382;*/
   padding: 50px;
   text-align: center;
   font-size: 90px;
@@ -230,25 +213,8 @@
 }
 
 .frontPageBtn {
-  -moz-box-shadow: inset 0px 1px 0px 0px #bee2f9;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #bee2f9;
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #63b8ee),
-    color-stop(1, #468ccf)
-  );
-  background: -moz-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background: -webkit-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background: -o-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background: -ms-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
-  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf',GradientType=0);
   background-color: #63b8ee;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
   border-radius: 6px;
   border: 1px solid #3866a3;
   display: inline-block;
@@ -263,19 +229,6 @@
 }
 
 .frontPageBtn:hover {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #468ccf),
-    color-stop(1, #63b8ee)
-  );
-  background: -moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background: -webkit-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background: -o-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background: -ms-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
-  background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0);
   background-color: #468ccf;
 }
 
