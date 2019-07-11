@@ -59,7 +59,7 @@ export default class Video extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="header">JavaScript Programmering</div>
+        <div className="header">Lær JavaScript Programmering</div>
         <div className="appVideo">
           <div className="aceEditor">
             <AceEditor

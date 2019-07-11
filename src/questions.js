@@ -118,7 +118,8 @@ var questions = [
     },
   },
   {
-    q: "Oppgave 6",
+    q:
+      "Nå kan man legge til uendelig mange ting i handlelisten vår, prøv selv. Nå ønsker vi å begrense antall ting i handlelisten til 20. Skriv ferdig funksjonen for å legge til funksjonalitet for dette.",
     startValue: "//meow",
     test: function test(input) {},
   },

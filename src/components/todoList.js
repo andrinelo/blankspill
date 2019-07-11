@@ -4,6 +4,7 @@ import TodoListItem from "./todoListItem";
 import Alert from "react-s-alert";
 import "react-s-alert/dist/s-alert-css-effects/jelly.css";
 import "../App.css";
+import { throwStatement } from "@babel/types";
 
 export default class TodoList extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class TodoList extends React.Component {
     };
     this.addTodo = this.addTodo.bind(this);
     this.checkIfEmpty = this.checkIfEmpty.bind(this);
+    this.displayWarning = this.displayWarning.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.deleteTodo = this.deleteTodo.bind(this);
     this.showNumberOfTodo = this.showNumberOfTodo.bind(this);
@@ -20,6 +22,7 @@ export default class TodoList extends React.Component {
 
   checkIfEmpty(todo) {
     if (todo.text === "") {
+      this.displayWarning("Du må skrive inn en todo først");
       return true;
     }
     return false;
@@ -30,16 +33,19 @@ export default class TodoList extends React.Component {
       todos: [...this.state.todos, todo],
     });
   }
+  displayWarning(warning) {
+    Alert.warning(warning, {
+      position: "top-right",
+      effect: "jelly",
+      timeout: 4000,
+    });
+  }
   //dealer med hva som skal skje mtp hvilke oppgave de er på
   handleAdd(todo) {
-    const warning = "Du må skrive en todo først";
     if (this.props.enable >= 2) {
       if (this.checkIfEmpty(todo)) {
-        Alert.warning(warning, {
-          position: "top-right",
-          effect: "jelly",
-          timeout: 4000,
-        });
+      } else if (this.props.enable >= 6 && this.state.todos.length >= 21) {
+        this.displayWarning("Handlelisten er full");
       } else {
         this.addTodo(todo);
       }
@@ -83,8 +89,8 @@ export default class TodoList extends React.Component {
     });
   }
 
-  changeEmoji(){ 
-    if (this.props.enable >= 5){
+  changeEmoji() {
+    if (this.props.enable >= 5) {
       return "🚀";
     }
     return "🍋";

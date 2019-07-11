@@ -133,7 +133,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="headerGame">JavaScript Programmering</div>
+        <div className="headerGame">Lær JavaScript Programmering</div>
         {/* <div className="taskBar">
           {this.state.questions.map( (q) => {
             
@@ -180,31 +180,31 @@ export default class App extends React.Component {
             onClick={this.question6}
           >
             Oppgave 6
-          </button> 
+          </button>
           <button
             className={this.state.question === 6 ? "activeTaskBtn" : "taskBtn"}
             onClick={this.question7}
           >
             Oppgave 7
-          </button>  
+          </button>
           <button
             className={this.state.question === 7 ? "activeTaskBtn" : "taskBtn"}
             onClick={this.question8}
           >
             Oppgave 8
-          </button>  
+          </button>
           <button
             className={this.state.question === 8 ? "activeTaskBtn" : "taskBtn"}
             onClick={this.question9}
           >
             Oppgave 9
-          </button>  
+          </button>
           <button
             className={this.state.question === 9 ? "activeTaskBtn" : "taskBtn"}
             onClick={this.question10}
           >
             Oppgave 10
-          </button>                     
+          </button>
         </div>
         <div className="app">
           <div>
