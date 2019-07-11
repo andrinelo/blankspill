@@ -30,6 +30,12 @@ export default class App extends React.Component {
     this.question2 = this.question2.bind(this);
     this.question3 = this.question3.bind(this);
     this.question4 = this.question4.bind(this);
+    this.question5 = this.question5.bind(this);
+    this.question6 = this.question6.bind(this);
+    this.question7 = this.question7.bind(this);
+    this.question8 = this.question8.bind(this);
+    this.question9 = this.question9.bind(this);
+    this.question10 = this.question10.bind(this);
   }
 
   componentDidMount() {
@@ -103,6 +109,27 @@ export default class App extends React.Component {
     this.setState({ question: 3, value: Questions[3].startValue });
   }
 
+  question5() {
+    this.setState({ question: 4, value: Questions[4].startValue });
+  }
+
+  question6() {
+    this.setState({ question: 5, value: Questions[5].startValue });
+  }
+  question7() {
+    this.setState({ question: 6, value: Questions[6].startValue });
+  }
+
+  question8() {
+    this.setState({ question: 7, value: Questions[7].startValue });
+  }
+  question9() {
+    this.setState({ question: 8, value: Questions[8].startValue });
+  }
+
+  question10() {
+    this.setState({ question: 9, value: Questions[9].startValue });
+  }
   render() {
     return (
       <div className="container">
@@ -142,6 +169,42 @@ export default class App extends React.Component {
           >
             Oppgave 4
           </button>
+          <button
+            className={this.state.question === 4 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question5}
+          >
+            Oppgave 5
+          </button>
+          <button
+            className={this.state.question === 5 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question6}
+          >
+            Oppgave 6
+          </button> 
+          <button
+            className={this.state.question === 6 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question7}
+          >
+            Oppgave 7
+          </button>  
+          <button
+            className={this.state.question === 7 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question8}
+          >
+            Oppgave 8
+          </button>  
+          <button
+            className={this.state.question === 8 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question9}
+          >
+            Oppgave 9
+          </button>  
+          <button
+            className={this.state.question === 9 ? "activeTaskBtn" : "taskBtn"}
+            onClick={this.question10}
+          >
+            Oppgave 10
+          </button>                     
         </div>
         <div className="app">
           <div>

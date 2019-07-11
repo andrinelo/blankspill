@@ -32,7 +32,6 @@ export default class TodoList extends React.Component {
   }
   //dealer med hva som skal skje mtp hvilke oppgave de er på
   handleAdd(todo) {
-    console.log(todo);
     const warning = "Du må skrive en todo først";
     if (this.props.enable >= 2) {
       if (this.checkIfEmpty(todo)) {
@@ -84,7 +83,15 @@ export default class TodoList extends React.Component {
     });
   }
 
+  changeEmoji(){ 
+    if (this.props.enable >= 5){
+      return "🚀";
+    }
+    return "🍋";
+  }
+
   render() {
+    let headerEmoji = this.changeEmoji();
     let todos = this.state.todos.map(todo => (
       <TodoListItem
         key={todo.key}
@@ -96,7 +103,7 @@ export default class TodoList extends React.Component {
     let showNumberOfTodo = this.showNumberOfTodo();
     return (
       <div className="todoList">
-        <div className="todoTitle"> Handleliste 🍋 </div>
+        <div className="todoTitle"> Handleliste {headerEmoji}</div>
         <TodoForm handleAdd={this.handleAdd} />
         {todos}
         {showNumberOfTodo}
