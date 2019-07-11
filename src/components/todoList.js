@@ -68,7 +68,7 @@ export default class TodoList extends React.Component {
       return timeToDoAlltask + " kroner for alt du skal ha";
     }
   }
-  /* Funker ikke sånn det skal */
+
   toggleComplete(key) {
     this.setState({
       todos: this.state.todos.map(todo => {

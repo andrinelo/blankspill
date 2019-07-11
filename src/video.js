@@ -26,8 +26,6 @@ export default class Video extends React.Component {
     this.videoSearch("Javascript for loops");
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    // this.question1 = this.question1.bind(this);
-    // this.question2 = this.question2.bind(this);
   }
 
   videoSearch(searchTerm) {
@@ -50,28 +48,13 @@ export default class Video extends React.Component {
       this.setState({ result: result });
     } catch {
       this.setState({ result: "" });
-      Alert.error("ikke godkjent javascript-syntaks", {
+      Alert.error("Ikke godkjent javascript-syntaks", {
         position: "bottom-left",
         effect: "jelly",
         timeout: 4000,
       });
     }
   }
-
-  /* question1() {
-    this.props.history.push("/game");
-  }
-
-  question2() {
-    this.props.history.push({
-      pathname: "/game",
-      state: { question: 1 },
-    });
-  }
-
-  question3 = () => {
-    this.props.history.push("/video");
-  };*/
 
   render() {
     return (
