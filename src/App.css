@@ -157,6 +157,8 @@
   background-color: #439b48;
 }
 .todoListItem {
+  display: flex;
+  flex-direction: row;
   width: 300px;
   height: 20px;
   /* padding-left: 5px; */
@@ -168,8 +170,11 @@
 }
 .completed {
   text-decoration: line-through;
+  max-width: 200px;
 }
-
+.uncompleted {
+  max-width: 200px;
+}
 .completed:hover {
   cursor: pointer;
 }
@@ -178,6 +183,8 @@
 }
 
 .deleteButton {
+  display: flex;
+  align-self: flex-end;
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
