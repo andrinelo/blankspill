@@ -102,16 +102,20 @@ var questions = [
   },
   {
     q: "Hvor god har du blitt til å programmere?",
-    startValue: "let programmingLevel = 'beginner';/*<<-code here*/\nfunction setEmoji(programmingLevel){\n     if(programmingLevel === 'expert'){\n            return('🚀');\n      }\n      else {\n            return('🍋');\n      }\n}",
-      test: function test(input) {
-        if (eval(input + "setEmoji(programmingLevel)") !== "🚀"){
-          return false;
-        }
-        if ("programmingLevel"=="expert" && eval(input + "setEmoji(programmingLevel)") == "🍋"){
-          return false;
-        }
-        return true;
-      },
+    startValue:
+      "let programmingLevel = 'beginner';/*<<-code here*/\nfunction setEmoji(programmingLevel){\n     if(programmingLevel === 'expert'){\n            return('🚀');\n      }\n      else {\n            return('🍋');\n      }\n}",
+    test: function test(input) {
+      if (eval(input + "setEmoji(programmingLevel)") !== "🚀") {
+        return false;
+      }
+      if (
+        "programmingLevel" == "expert" &&
+        eval(input + "setEmoji(programmingLevel)") == "🍋"
+      ) {
+        return false;
+      }
+      return true;
+    },
   },
   {
     q: "Oppgave 6",
@@ -134,10 +138,10 @@ var questions = [
     test: function test(input) {},
   },
   {
-    q: "<url>",
+    q: <a href="http://localhost:3000/video">Link til video</a>,
     startValue: "//meow",
     test: function test(input) {},
-  } 
+  },
 
   /* 
   {
@@ -153,7 +157,7 @@ var questions = [
       }
       return true;
     },
-  }, */,
+  }, */
 ];
 
 export default questions;
