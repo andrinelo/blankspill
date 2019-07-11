@@ -8,7 +8,7 @@ const VideoListItem = props => {
   return (
     <div className="videoListItem" onClick={() => onUserSelected(video)}>
       <img src={imageUrl} />
-      <div>{video.snippet.title}</div>
+      {/*<div>{video.snippet.title}</div> - if u want to display title*/}
     </div>
   );
 };
