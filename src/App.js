@@ -223,6 +223,7 @@ export default class App extends React.Component {
                 name="UNIQUE_ID_OF_DIV"
                 height="300px"
                 width="500px"
+                fontSize={16}
                 editorProps={{
                   $blockScrolling: true,
                 }}
