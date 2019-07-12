@@ -24,15 +24,14 @@
   font-weight: 100;
   font-family: Butler, sans-serif;
   padding-top: 20px;
-
 }
 
-.headerGame:after{
-  content:'';
+.headerGame:after {
+  content: "";
   display: block;
   width: 90%;
   border: 2px solid #d0d0d0;
-  border-radius:4px;
+  border-radius: 4px;
   margin: 0 auto;
 }
 
@@ -93,6 +92,11 @@
   margin-top: 20px;
   margin-bottom: 5%;
 }
+.tilteAndHintContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .questionTitle {
   color: #000000;
   /* text-align: center; */
@@ -102,8 +106,17 @@
   padding-left: 10px;
   font-family: Butler, sans-serif;
 }
+
+.hintButton {
+  align-self: flex-end;
+  margin: 5px;
+  padding: 3px;
+  margin-left: 290px;
+}
+
 .question {
   padding: 10px;
+  margin: 0;
 }
 
 /*Dette er runknappen*/
