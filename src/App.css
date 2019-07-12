@@ -20,7 +20,7 @@
 .headerGame {
   color: #818382;
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 100;
   font-family: Butler, sans-serif;
   padding-top: 20px;
@@ -36,12 +36,15 @@
 }
 
 .taskBar {
+  padding-top: 5px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
 .taskBtn {
+  width: 90px;
+  height: 40px;
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
   background-color: #63b8ee;
   border-radius: 6px;
@@ -49,7 +52,7 @@
   display: inline-block;
   cursor: pointer;
   color: #14396a;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   padding: 5px 5px;
   text-decoration: none;
@@ -66,13 +69,15 @@
   top: 1px;
 }
 .activeTaskBtn {
+  width: 90px;
+  height: 40px;
   background-color: #468ccf;
   border-radius: 6px;
   border: 1px solid #3866a3;
   display: inline-block;
   cursor: pointer;
   color: #14396a;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   padding: 5px 5px;
   text-decoration: none;
@@ -84,8 +89,8 @@
 .task {
   display: flex;
   flex-direction: column;
-  width: 500px;
-  height: 220px;
+  width: 600px;
+  height: 320px;
   font-family: Butler, sans-serif;
   background-color: #a1a3a2;
   border-radius: 5px;
@@ -139,8 +144,8 @@
 /* Todo appen  */
 .todoListPage {
   display: flex;
-  width: 430px;
-  height: 541px;
+  width: 470px;
+  height: 741px;
   margin-top: 20px;
   font-family: Butler, sans-serif;
   justify-content: flex-start;
@@ -154,7 +159,7 @@
 
 .todoTitle {
   color: #000000;
-  text-align: flex-start;
+  text-align: center;
   font-size: 40px;
   font-weight: 400;
   padding-top: 10px;
@@ -163,8 +168,9 @@
 }
 
 .todoInput {
+  width: 250px;
   font-family: Butler, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   background-color: #dddddd;
   border-radius: 3px;
   border: none;
@@ -173,10 +179,10 @@
 
 .leggTil {
   font-family: Butler, sans-serif;
-  font-size: 12px;
-  width: 60px;
+  font-size: 18px;
+  width: 80px;
   text-align: center;
-  height: 21px; /*default så kan fjernes*/
+  height: 25px; /*default så kan fjernes*/
   background-color: #4caf50;
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
   border-radius: 6px;
@@ -190,10 +196,18 @@
 .todoListItem {
   display: flex;
   flex-direction: row;
-  width: 300px;
+  width: 350px;
   height: 20px;
-  /* padding-left: 5px; */
+  font-family: Butler, sans-serif;
+  font-size: 18px;
+  padding-bottom: 2px;
   overflow: hidden; /*skjuler hvis man skriver for mye*/
+}
+
+.showNumber {
+  font-family: Butler, sans-serif;
+  font-size: 18px;
+  padding-top: 2px;
 }
 
 .checkbox:hover {
@@ -201,10 +215,10 @@
 }
 .completed {
   text-decoration: line-through;
-  max-width: 200px;
+  max-width: 300px;
 }
 .uncompleted {
-  max-width: 200px;
+  max-width: 300px;
 }
 .completed:hover {
   cursor: pointer;

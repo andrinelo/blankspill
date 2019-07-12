@@ -27,7 +27,7 @@ var questions = [
       "Nå kan man legge til en 'tom vare', det er ikke helt heldig. Test det selv 🔍 Skriv ferdig metoden checkIfEmpty ved å fullføre en 'if-statement' for å rette opp i det.",
     hint: "",
     startValue:
-      "let shoppingList =[];\nfunction checkIfEmpty(item){\n  if (/*din kode her*/ === /*dine kode her*/){\n        return shoppingList;\n  }\n  else{\n    todoList.push(todoItem);\n    return todoList;\n  }\n}",
+      "let shoppingList =[];\nfunction checkIfEmpty(item){\n  if (/*din kode her*/ === /*dine kode her*/){\n        return shoppingList;\n  }\n  else{\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
     test: function test(input) {
       let a = eval(input + "checkIfEmpty('bli rik')");
       if (a.toString) {
@@ -40,14 +40,13 @@ var questions = [
         if (eval(input + "checkIfEmpty('')").toString() !== [].toString()) {
           return false;
         }
-        if (
+        {/*if (
           eval(
             input +
-              "checkIfEmpty('')\ncheckIfEmpty('dra på fest')\ncheckIfEmpty('')",
-          ).toString() !== ["dra på fest"].toString()
+              "checkIfEmpty('')\ncheckIfEmpty('dra på fest')\ncheckIfEmpty('')").toString() !== ["dra på fest"].toString()
         ) {
           return false;
-        }
+        }*/}
         return true;
       }
       console.log("noo");
@@ -194,22 +193,6 @@ var questions = [
     startValue: "//meow",
     test: function test(input) {},
   },
-
-  /* 
-  {
-    q: "Lag en funksjon med navn multiplication som ganger to tall",
-    startValue:
-      "let todoList =[]\nfunction checkIfEmpty(todoItem){\nif (todoItem === ''){\nalert('Du må skrive en todo først')\n}\nelse{\ntodoList.push(todoItem);\n}\n}",
-    test: function test(input) {
-      if (eval(input + " multiplication(2,3)") !== 6) {
-        return false;
-      }
-      if (eval(input + "multiplication((-1),5)") !== -5) {
-        return false;
-      }
-      return true;
-    },
-  }, */
 ];
 
 export default questions;

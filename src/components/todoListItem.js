@@ -9,8 +9,8 @@ class TodoListItem extends React.Component {
   }
 
   itemToShow(){
-    if (this.props.todo.text.length > 18) {
-    return this.props.todo.text.substring(0,18) + "...";
+    if (this.props.todo.text.length > 25) {
+    return this.props.todo.text.substring(0,25) + "...";
   }
     else {
       return this.props.todo.text;
