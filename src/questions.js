@@ -43,7 +43,7 @@ var questions = [
               "checkIfEmpty('')\ncheckIfEmpty('dra på fest')\ncheckIfEmpty('')").toString() !== ["dra på fest"].toString()
         ) {
           return false;
-        } - funker itj*/}
+        }*/}
         return true;
       }
       console.log("noo");

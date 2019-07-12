@@ -112,7 +112,9 @@ export default class TodoList extends React.Component {
         <div className="todoTitle"> Handleliste {headerEmoji}</div>
         <TodoForm handleAdd={this.handleAdd} />
         {todos}
+        <div className="showNumber">
         {showNumberOfTodo}
+        </div>
       </div>
     );
   }
