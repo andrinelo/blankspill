@@ -107,7 +107,7 @@ var questions = [
   },
   {
     q: "Hvor god har du blitt til å programmere?",
-    hint: "",
+    hint: "hint",
     startValue:
       "let programmingLevel = 'beginner';/*<<-code here*/\nfunction setEmoji(programmingLevel){\n  if(programmingLevel === 'expert'){\n    return('🚀');\n  }\n  else {\n    return('🍋');\n  }\n}",
     test: function test(input) {

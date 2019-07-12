@@ -60,6 +60,7 @@ export default class App extends React.Component {
         this.setState({
           question: this.state.question + 1,
           value: Questions[this.state.question + 1].startValue,
+          hint: false,
           /* completed: this.state.completed.map(i => {
             if(){
             return !i;
