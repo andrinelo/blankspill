@@ -26,6 +26,7 @@ export default class App extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClickRun = this.handleClickRun.bind(this);
+    this.showHint = this.showHint.bind(this);
     this.question1 = this.question1.bind(this);
     this.question2 = this.question2.bind(this);
     this.question3 = this.question3.bind(this);
@@ -90,6 +91,11 @@ export default class App extends React.Component {
         },
       );
     }
+  }
+
+  showHint() {
+    console.log(Questions[this.state.question].hint);
+    return Questions[this.state.question].hint;
   }
 
   question1() {
@@ -213,6 +219,7 @@ export default class App extends React.Component {
                 Oppgave {this.state.question + 1}
               </div>
               <p className="question">{Questions[this.state.question].q}</p>
+              {/* <button onClick={this.showHint}>Hint</button> */}
             </div>
             <div className="aceEditor">
               <AceEditor

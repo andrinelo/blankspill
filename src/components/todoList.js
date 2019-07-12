@@ -44,7 +44,7 @@ export default class TodoList extends React.Component {
   handleAdd(todo) {
     if (this.props.enable >= 2) {
       if (this.checkIfEmpty(todo)) {
-      } else if (this.props.enable >= 6 && this.state.todos.length >= 21) {
+      } else if (this.props.enable >= 6 && this.state.todos.length >= 20) {
         this.displayWarning("Handlelisten er full");
       } else {
         this.addTodo(todo);
