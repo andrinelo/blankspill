@@ -40,13 +40,13 @@ var questions = [
         if (eval(input + "checkIfEmpty('')").toString() !== [].toString()) {
           return false;
         }
-        {/*if (
+        /*if (
           eval(
             input +
               "checkIfEmpty('')\ncheckIfEmpty('dra på fest')\ncheckIfEmpty('')").toString() !== ["dra på fest"].toString()
         ) {
           return false;
-        }*/}
+        }*/
         return true;
       }
       console.log("noo");
