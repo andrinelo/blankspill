@@ -103,6 +103,11 @@ export default class App extends React.Component {
     if (this.state.hint) {
       hint = Questions[this.state.question].hint;
     }
+
+    let link = "";
+    if (this.state.question === 9){
+      link = "Fortsettelse følger...";
+    }
     return (
       <div className="container">
         <div className="headerGame">Lær JavaScript Programmering</div>
@@ -185,12 +190,13 @@ export default class App extends React.Component {
                 <div className="questionTitle">
                   Oppgave {this.state.question + 1}
                 </div>
-                <button className="hintButton" onClick={this.toggleHint}>
+                <button className={this.state.question < 9 ? "hintButton" : "pyro"} onClick={this.toggleHint}>
                   💡
-                </button>
+                </button> 
               </div>
-              <p className="question">{Questions[this.state.question].q}</p>
+              <div className="question">{Questions[this.state.question].q}</div>
               <div className="question">{hint}</div>
+              <a className="question" href="http://localhost:3000/video">{link}</a>
             </div>
             <div className="aceEditor">
               <AceEditor
