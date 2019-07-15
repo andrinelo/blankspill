@@ -327,6 +327,7 @@
 
 .pyro {
   position: absolute;
+  z-index: 1;
   width: 5px;
   height: 5px;
   border-radius: 50%;
