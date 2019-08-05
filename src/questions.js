@@ -4,9 +4,9 @@ import React from "react";
 var questions = [
   {
     q:
-      "Nå kan du ikke legge til varer i handlelista. Prøv selv ved å skrive inn noe du vil kjøpe og se hva som skjer 🚀 For å fikse dette - skriv ferdig funksjonen 𝘢𝘥𝘥𝘐𝘵𝘦𝘮.",
+      "Nå kan du ikke legge til varer i handlelista. Prøv selv ved å skrive inn noe du vil kjøpe og se hva som skjer 🚀 For å fikse dette må vi skrive ferdig funksjonen 𝘢𝘥𝘥𝘐𝘵𝘦𝘮. Hvis du trenger hjelp kan du trykke på lyspæren for å få et tips.",
     hint:
-      "Tips: du kan legge til noe i en liste ved å skrive liste.push(item).",
+      "Tips: Vi ønsker å legge til elementet som funksjonen tar inn i listen shoppingList. Du kan legge til noe i en liste ved å skrive ListensNavn.push(ListeelementetsNavn).",
     startValue:
       "var shoppingList = [];\nfunction addItem(item){\n  //skriv din kode her\n  return shoppingList;\n}",
     test: function test(input) {
@@ -40,13 +40,14 @@ var questions = [
         if (eval(input + "checkIfEmpty('')").toString() !== [].toString()) {
           return false;
         }
-        /*if (
+        if (
           eval(
             input +
-              "checkIfEmpty('')\ncheckIfEmpty('dra på fest')\ncheckIfEmpty('')").toString() !== ["dra på fest"].toString()
+              "checkIfEmpty('')\ncheckIfEmpty('dra på fest')\ncheckIfEmpty('')",
+          ).toString() !== ["dra på fest"].toString()
         ) {
           return false;
-        }*/
+        }
         return true;
       }
       console.log("noo");
@@ -86,18 +87,15 @@ var questions = [
   },
   {
     q:
-      "Man kan også gjøre regneoperasjoner. Si du ønsker å vite hvor mye alt på handlelista koster. Vi tar en snarvei og antar at hver vare koster 30kr. Skriv ferdig koden esimatePrice() for å regne ut et estimat på hva du må betale.🧠",
-    hint: "ShoppingListNumber er antall varer i handlelisten",
+      "Si at du ønsker å vite hvor mange varer du har i handlelisten din, da må vi lage en funksjon for det! Vi har skrevet en for løkke som går igjennom listen og skal telle hvor mange varer det finnes i den, kan du fullføre den?",
+    hint:
+      "For å plusse et tall med 1 kan man enten skrive tall = tall +1, eller tall += 1.",
     startValue:
-      "function estimatePrice(shoppingListNumber){\n  let priceForEachItem = 30;\n  let totalCost = /*dine kode her*/;\n  return totalCost + ' kroner for alt du skal ha';\n} ",
+      "function showNumberOfItems(shoppingList){\n  var i=0;\n  let numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    numberOfItems //din kode her;\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
     test: function test(input) {
-      let testNum = 5;
-      let a = eval(input + "estimatePrice(testNum);");
-      if (a !== "150 kroner for alt du skal ha") {
-        return false;
-      }
+      let testList = ["melon", "agurk", "paprika"];
       if (
-        eval(input + "estimatePrice(1);") !== "30 kroner for alt du skal ha"
+        eval(input + "showNumberOfItems(testList)") !== "3 varer i handlelisten"
       ) {
         return false;
       }
@@ -124,13 +122,33 @@ var questions = [
   },
   {
     q:
-      "Nå kan man legge til uendelig mange varer i handlelisten vår, prøv selv. Nå ønsker vi å begrense antall varer i handlelisten til maks 20. Skriv ferdig funksjonen for å legge til funksjonalitet for dette.",
+      "Nå kan man legge til uendelig mange varer i handlelisten vår, prøv selv. Nå ønsker vi å begrense antall varer i handlelisten til maks 25(til og med 25). Skriv ferdig funksjonen for å legge til funksjonalitet for dette.",
     hint:
       "x < y betyr x er mindre enn y \n x <= y betyr x er mindre eller lik y\n x > y betyr x er større enn y\n x >= y betyr x er større eller lik y\n x != y betyr x er ikke lik y",
     startValue:
-      "function maxLength (shoppingList, item){\n  if (shoppingList.length /*skriv din kode her*/ 20) {\n    return shoppingList;\n  } else {\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
+      "function maxLength (shoppingList, item){\n  if (shoppingList.length /*skriv din kode her*/ 25) {\n    return shoppingList;\n  } else {\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
     test: function test(input) {
-      let testList = [1, 1, 2, 3, 4, 5, 6];
+      let testList = [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+      ];
       let testList2 = [
         1,
         2,
@@ -153,9 +171,33 @@ var questions = [
         19,
         20,
       ];
-      let a = eval(input + "maxLength(testList, 8)");
+      let a = eval(input + "maxLength(testList, 20)");
       if (a.toString) {
-        if (a.toString() !== [1, 1, 2, 3, 4, 5, 6, 8].toString()) {
+        if (
+          a.toString() !==
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+          ].toString()
+        ) {
           return false;
         }
         if (
@@ -170,26 +212,27 @@ var questions = [
     },
   },
   {
-    q: "Oppgave 7",
-    hint: "",
+    q: "*fortsettelse på oppgave 4*",
+    hint: "heisann ",
     startValue: "//meow",
     test: function test(input) {},
   },
   {
     q: "Oppgave 8",
-    hint: "",
+    hint: "hoppsann",
     startValue: "//meow",
     test: function test(input) {},
   },
   {
     q: "Oppgave 9",
-    hint: "",
+    hint: "fallerallera",
     startValue: "//meow",
     test: function test(input) {},
   },
   {
-    q: "Gratulerer!! Du har nå lagt til funksjonalitet på handlelisten og er klar til å jobbe videre på egenhånd🚀🚀",
-    hint: "",
+    q:
+      "Gratulerer!! Du har nå lagt til funksjonalitet på handlelisten og er klar til å jobbe videre på egenhånd🚀🚀",
+    hint: "Om julekvelden da skal alle sammen være glad ",
     startValue: "//meow",
     test: function test(input) {},
   },
