@@ -110,7 +110,7 @@ export default class App extends React.Component {
     }
     return (
       <div className="container">
-        <div className="headerGame">Lær JavaScript Programmering</div>
+        <div className="headerGame">Lær JavaScript-programmering</div>
         {/* <div className="taskBar">
           {this.state.questions.map( (q) => {
             

@@ -4,11 +4,11 @@ import React from "react";
 var questions = [
   {
     q:
-      "Nå kan du ikke legge til varer i handlelista. Prøv selv ved å skrive inn noe du vil kjøpe og se hva som skjer 🚀 For å fikse dette - skriv ferdig funksjonen 𝘢𝘥𝘥𝘐𝘵𝘦𝘮.",
+      "Nå kan du ikke legge til varer i handlelista. Prøv selv ved å skrive inn noe du vil kjøpe og se hva som skjer 🚀 For å fikse dette - skriv ferdig funksjonen addItem",
     hint:
       "Tips: du kan legge til noe i en liste ved å skrive liste.push(item).",
     startValue:
-      "var shoppingList = [];\nfunction addItem(item){\n  //skriv din kode her\n  return shoppingList;\n}",
+      "var shoppingList = [];\nfunction addItem(item){\n  //skriv din kode under her\n  return shoppingList;\n}",
     test: function test(input) {
       let a = eval(input + "addItem('sitron')");
       if (a.toString) {
@@ -27,7 +27,7 @@ var questions = [
       "Nå kan man legge til en 'tom vare', det er ikke helt heldig. Test det selv 🔍 Skriv ferdig metoden checkIfEmpty ved å fullføre en 'if-statement' for å rette opp i det.",
     hint: "Et tomt item er en tom string",
     startValue:
-      "let shoppingList =[];\nfunction checkIfEmpty(item){\n  if (/*din kode her*/ === /*dine kode her*/){\n        return shoppingList;\n  }\n  else{\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
+      "let shoppingList =[];\nfunction checkIfEmpty(item){\n  if (/*din kode her*/ === /*dine kode her*/){\n    return shoppingList;\n  }\n  else{\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
     test: function test(input) {
       let a = eval(input + "checkIfEmpty('bli rik')");
       if (a.toString) {
@@ -55,10 +55,10 @@ var questions = [
   },
   {
     q:
-      "I JavaScript har man noen innebygde funksjoner man kan bruke til forskjellige ting. Splice() til eksempel kan brukes for å endre en liste.\n Nå kan man ikke slette todos, prøv selv 🔍 Skriv ferdig deleteTodo for å fikse det.",
-    hint: "tall = [2,4,6,8]; Splice.tall(2,1) gir tall = [2,4,8]",
+      "I JavaScript har man noen innebygde funksjoner man kan bruke til forskjellige ting. splice() til eksempel kan brukes for å endre en liste.\n Nå kan man ikke slette todos, prøv selv 🔍 Skriv ferdig deleteItem for å fikse det.",
+    hint: "tall = [2,4,6,8]; tall.splice(2,1) gir tall = [2,4,8]",
     startValue:
-      "function deleteItem(shoppingList, shoppingItem){\n  //skriv din kode her \n  return shoppingList;\n}",
+      "function deleteItem(shoppingList, shoppingItem){\n  //skriv din kode under her \n  return shoppingList;\n}",
     test: function test(input) {
       let testList = [1, 1, 2, 3, 4, 5, 6];
       let testList2 = [1, 1, 2, 3, 4, 5, 6];
@@ -151,7 +151,7 @@ var questions = [
         17,
         18,
         19,
-        20,
+        20
       ];
       let a = eval(input + "maxLength(testList, 8)");
       if (a.toString) {

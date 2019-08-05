@@ -94,19 +94,27 @@ export default class TodoList extends React.Component {
       return "🚀";
     }
     return "🍋";
-  }
+  }/*
+  changeState(){
+    this.setState({todos: this.state.todos.splice(10,100000)});
+  }*/
 
   render() {
     let headerEmoji = this.changeEmoji();
     let todos = this.state.todos.map(todo => (
-      <TodoListItem
-        key={todo.key}
-        toggleComplete={() => this.toggleComplete(todo.key)}
-        todo={todo}
-        onDelete={() => this.deleteTodo(todo.key)}
-      />
+    <TodoListItem
+      key={todo.key}
+      toggleComplete={() => this.toggleComplete(todo.key)}
+      todo={todo}
+      onDelete={() => this.deleteTodo(todo.key)}
+    />
     ));
     let showNumberOfTodo = this.showNumberOfTodo();
+    if(this.props.enable >= 6 && this.state.todos.length > 25){
+      todos.length=25
+      showNumberOfTodo= "600 kroner for alt du skal ha"
+    }
+
     return (
       <div className="todoList">
         <div className="todoTitle"> Handleliste {headerEmoji}</div>
