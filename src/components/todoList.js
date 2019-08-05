@@ -44,7 +44,7 @@ export default class TodoList extends React.Component {
   handleAdd(todo) {
     if (this.props.enable >= 2) {
       if (this.checkIfEmpty(todo)) {
-      } else if (this.props.enable >= 6 && this.state.todos.length >= 20) {
+      } else if (this.props.enable >= 6 && this.state.todos.length >= 25) {
         this.displayWarning("Handlelisten er full");
       } else {
         this.addTodo(todo);
@@ -69,8 +69,18 @@ export default class TodoList extends React.Component {
 
   showNumberOfTodo() {
     if (this.props.enable >= 4) {
-      let timeToDoAlltask = this.state.todos.length * 30;
-      return timeToDoAlltask + " kroner for alt du skal ha";
+      var numberOfItems = 0;
+      if (this.props.enable >= 7) {
+        var i;
+        for (i = 0; i < this.state.todos.length; i++) {
+          if (this.state.todos[i].complete === false) {
+            numberOfItems += 1;
+          }
+        }
+        return numberOfItems + " varer i handlelisten";
+      }
+      numberOfItems = this.state.todos.length;
+      return numberOfItems + " varer i handlelisten";
     }
   }
 
@@ -112,7 +122,6 @@ export default class TodoList extends React.Component {
     let showNumberOfTodo = this.showNumberOfTodo();
     if(this.props.enable >= 6 && this.state.todos.length > 25){
       todos.length=25
-      showNumberOfTodo= "600 kroner for alt du skal ha"
     }
 
     return (
@@ -120,9 +129,7 @@ export default class TodoList extends React.Component {
         <div className="todoTitle"> Handleliste {headerEmoji}</div>
         <TodoForm handleAdd={this.handleAdd} />
         {todos}
-        <div className="showNumber">
-        {showNumberOfTodo}
-        </div>
+        <div className="showNumber">{showNumberOfTodo}</div>
       </div>
     );
   }
