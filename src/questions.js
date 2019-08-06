@@ -27,7 +27,7 @@ var questions = [
       "Nå kan man legge til en 'tom vare', det er ikke helt heldig. Test det selv 🔍 Skriv ferdig metoden checkIfEmpty ved å fullføre en 'if-statement' for å rette opp i det.",
     hint: "Et tomt item er en tom string",
     startValue:
-      "let shoppingList =[];\nfunction checkIfEmpty(item){\n  if (/*din kode her*/ === /*dine kode her*/){\n    return shoppingList;\n  }\n  else{\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
+      "var shoppingList =[];\nfunction checkIfEmpty(item){\n  if (/*din kode her*/ === /*dine kode her*/){\n    return shoppingList;\n  }\n  else{\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
     test: function test(input) {
       let a = eval(input + "checkIfEmpty('bli rik')");
       if (a.toString) {
@@ -91,7 +91,7 @@ var questions = [
     hint:
       "For å plusse et tall med 1 kan man enten skrive tall = tall +1, eller tall += 1.",
     startValue:
-      "function showNumberOfItems(shoppingList){\n  var i=0;\n  let numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    numberOfItems //din kode her;\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
+      "function showNumberOfItems(shoppingList){\n  var i=0;\n  var numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    numberOfItems //din kode her;\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
     test: function test(input) {
       let testList = ["melon", "agurk", "paprika"];
       if (
@@ -106,7 +106,7 @@ var questions = [
     q: "Hvor god har du blitt til å programmere?",
     hint: "Denne klarer du!",
     startValue:
-      "let programmingLevel = 'beginner';/*<<-code here*/\nfunction setEmoji(programmingLevel){\n  if(programmingLevel === 'expert'){\n    return('🚀');\n  }\n  else {\n    return('🍋');\n  }\n}",
+      "var programmingLevel = 'beginner';/*<<-code here*/\nfunction setEmoji(programmingLevel){\n  if(programmingLevel === 'expert'){\n    return('🚀');\n  }\n  else {\n    return('🍋');\n  }\n}",
     test: function test(input) {
       if (eval(input + "setEmoji(programmingLevel)") !== "🚀") {
         return false;
