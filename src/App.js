@@ -196,7 +196,7 @@ export default class App extends React.Component {
               </div>
               <div className="question">{Questions[this.state.question].q}</div>
               <div className="question">{hint}</div>
-              <a className="question" href="http://localhost:3000/video">{link}</a>
+              <a className={this.state.question > 9 ? "question" : null} href="http://localhost:3000/video">{link}</a>
             </div>
             <div className="aceEditor">
               <AceEditor
