@@ -126,8 +126,9 @@ var questions = [
     hint:
       "x < y betyr x er mindre enn y \n x <= y betyr x er mindre eller lik y\n x > y betyr x er større enn y\n x >= y betyr x er større eller lik y\n x != y betyr x er ikke lik y",
     startValue:
-      "function maxLength (shoppingList, item){\n  if (shoppingList.length /*skriv din kode her*/ 25) {\n    return shoppingList;\n  } else {\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
+      "function addItem (shoppingList, item){\n  if (shoppingList.length /*skriv din kode her*/ 25) {\n    return shoppingList;\n  } else {\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
     test: function test(input) {
+      console.log("hei")
       let testList = [
         1,
         2,
@@ -148,6 +149,11 @@ var questions = [
         17,
         18,
         19,
+        20,
+        21,
+        22,
+        23,
+        24,
       ];
       let testList2 = [
         1,
@@ -169,46 +175,60 @@ var questions = [
         17,
         18,
         19,
-        20
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
       ];
-      let a = eval(input + "maxLength(testList, 20)");
-      if (a.toString) {
+      let testList3 = [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+      ];
+      let a = eval(input + "addItem(testList, 25)");
         if (
-          a.toString() !==
-          [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            11,
-            12,
-            13,
-            14,
-            15,
-            16,
-            17,
-            18,
-            19,
-            20,
-          ].toString()
+          a.toString() !== testList2.toString()
         ) {
           return false;
         }
+      let b = eval(input + "addItem(testList2, 26)");
         if (
-          eval(input + "maxLength(testList2,21)").toString() !==
-          testList2.toString()
+          b.toString() !== testList2.toString()
+        ) {
+          return false;
+        }
+      let c = eval(input + "addItem(testList3, 27)");
+        if (
+          c.toString() !==testList3.toString()
         ) {
           return false;
         }
         return true;
-      }
-      return false;
     },
   },
   {
