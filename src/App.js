@@ -105,7 +105,7 @@ export default class App extends React.Component {
     }
 
     let link = "";
-    if (this.state.question === 9){
+    if (this.state.question === 7) {
       link = "Fortsettelse følger...";
     }
     return (
@@ -170,18 +170,6 @@ export default class App extends React.Component {
           >
             Oppgave 8
           </button>
-          <button
-            className={this.state.question === 8 ? "activeTaskBtn" : "taskBtn"}
-            onClick={() => this.changeQuestion(8)}
-          >
-            Oppgave 9
-          </button>
-          <button
-            className={this.state.question === 9 ? "activeTaskBtn" : "taskBtn"}
-            onClick={() => this.changeQuestion(9)}
-          >
-            Oppgave 10
-          </button>
         </div>
         <div className="app">
           <div>
@@ -190,13 +178,21 @@ export default class App extends React.Component {
                 <div className="questionTitle">
                   Oppgave {this.state.question + 1}
                 </div>
-                <button className={this.state.question < 9 ? "hintButton" : "pyro"} onClick={this.toggleHint}>
+                <button
+                  className={this.state.question < 7 ? "hintButton" : "pyro"}
+                  onClick={this.toggleHint}
+                >
                   💡
-                </button> 
+                </button>
               </div>
               <div className="question">{Questions[this.state.question].q}</div>
               <div className="question">{hint}</div>
-              <a className={this.state.question > 9 ? "question" : null} href="http://localhost:3000/video">{link}</a>
+              <a
+                className={this.state.question > 7 ? "question" : null}
+                href="http://localhost:3000/video"
+              >
+                {link}
+              </a>
             </div>
             <div className="aceEditor">
               <AceEditor
