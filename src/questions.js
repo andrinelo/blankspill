@@ -233,11 +233,12 @@ var questions = [
   },
   {
     q:
-      "I oppgave 4 lagde vi en funksjon som skulle telle antall varer du har i handlekurven. Der tok vi ikke hensyn til at de som man har huket av fra listen ikke burde være med i tellingen lenger. Det skal vi fikse nå! For å få det til må vi lage en if setning som sjekker at varen ikke allerede er markert som gjort",
+      "I oppgave 4 lagde vi en funksjon som skulle telle antall varer du har i handlelisten. Der tok vi ikke hensyn til at de som man har huket av fra listen ikke burde være med i tellingen lenger. Det skal vi fikse nå! For å få til det skal vi kun telle de varene som ikke er handlet inn. Fullfør if-setningen for å oppnå dette",
     hint:
-      "hvis ... === true så betyr det at varen allerede er hentet, hvis ... === false betyr det at den ikke er hentet",
+      "Vi løser oppgaven ved å summere alle varer hvor completed === false.\n Hvis ... === true så betyr det at varen er sjekket av. \nHvis ... === false betyr det at varen ikke er sjekket av",
+
     startValue:
-      "function showNumberOfItems(shoppingList){\n  var i=0;\n  var numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    if(shoppingList[i].completed === false) {\n      numberOfItems += 1;\n    }\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
+      "function showNumberOfItems(shoppingList){\n  var i=0;\n  var numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    if(shoppingList[i].completed === false) {\n      /*din kode under her*/\n    }\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
     test: function test(input) {
       var testList = [
         { name: "annanas", completed: true },
