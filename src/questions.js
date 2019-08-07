@@ -232,10 +232,36 @@ var questions = [
     },
   },
   {
-    q: "*fortsettelse på oppgave 4*",
-    hint: "heisann ",
-    startValue: "//meow",
-    test: function test(input) {},
+    q:
+      "I oppgave 4 lagde vi en funksjon som skulle telle antall varer du har i handlekurven. Der tok vi ikke hensyn til at de som man har huket av fra listen ikke burde være med i tellingen lenger. Det skal vi fikse nå! For å få det til må vi lage en if setning som sjekker at varen ikke allerede er markert som gjort",
+    hint:
+      "hvis ... === true så betyr det at varen allerede er hentet, hvis ... === false betyr det at den ikke er hentet",
+    startValue:
+      "function showNumberOfItems(shoppingList){\n  var i=0;\n  var numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    if(shoppingList[i].completed === false) {\n      numberOfItems += 1;\n    }\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
+    test: function test(input) {
+      var testList = [
+        { name: "annanas", completed: true },
+        { name: "apple", completed: false },
+        { name: "orange", completed: true },
+      ];
+      var testList2 = [
+        { name: "annanas", completed: false },
+        { name: "apple", completed: false },
+        { name: "orange", completed: false },
+      ];
+      if (
+        eval(input + "showNumberOfItems(testList)") !== "1 varer i handlelisten"
+      ) {
+        return false;
+      }
+      if (
+        eval(input + "showNumberOfItems(testList2)") !==
+        "3 varer i handlelisten"
+      ) {
+        return false;
+      }
+      return true;
+    },
   },
   {
     q: "Oppgave 8",
@@ -252,7 +278,7 @@ var questions = [
   {
     q:
       "Gratulerer!! Du har nå lagt til funksjonalitet på handlelisten og er klar til å jobbe videre på egenhånd🚀🚀",
-    hint: "Om julekvelden da skal alle sammen være glad ",
+    hint: "Om julekvelden da skal alle sammen være glad",
     startValue: "//meow",
     test: function test(input) {},
   },
