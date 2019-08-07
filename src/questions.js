@@ -169,7 +169,7 @@ var questions = [
         17,
         18,
         19,
-        20
+        20,
       ];
       let a = eval(input + "maxLength(testList, 20)");
       if (a.toString) {
@@ -212,10 +212,14 @@ var questions = [
     },
   },
   {
-    q: "*fortsettelse på oppgave 4*",
-    hint: "heisann ",
-    startValue: "//meow",
-    test: function test(input) {},
+    q:
+      "I oppgave 4 lagde vi en funksjon som skulle telle antall varer du har i handlekurven. Der tok vi ikke hensyn til at de som man har huket av fra listen ikke burde være med i tellingen lenger. Det skal vi fikse nå. ",
+    hint: "heisann",
+    startValue:
+      "function showNumberOfItems(shoppingList){\n  var i=0;\n  var numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    if(shoppingList.completed === true) {\n      numberOfItems += 1;\n    }\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
+    test: function test(input) {
+      return true;
+    },
   },
   {
     q: "Oppgave 8",
@@ -232,7 +236,7 @@ var questions = [
   {
     q:
       "Gratulerer!! Du har nå lagt til funksjonalitet på handlelisten og er klar til å jobbe videre på egenhånd🚀🚀",
-    hint: "Om julekvelden da skal alle sammen være glad ",
+    hint: "Om julekvelden da skal alle sammen være glad",
     startValue: "//meow",
     test: function test(input) {},
   },
