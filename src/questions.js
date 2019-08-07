@@ -25,7 +25,7 @@ var questions = [
   {
     q:
       "Nå kan man legge til en 'tom vare', det er ikke helt heldig. Test det selv 🔍 Skriv ferdig metoden checkIfEmpty ved å fullføre en 'if-statement' for å rette opp i det.",
-    hint: "Et tomt item er en tom string",
+    hint: "Tips: Et tomt item er en tom string",
     startValue:
       "var shoppingList =[];\nfunction checkIfEmpty(item){\n  if (/*din kode her*/ === /*dine kode her*/){\n    return shoppingList;\n  }\n  else{\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
     test: function test(input) {
@@ -57,7 +57,7 @@ var questions = [
   {
     q:
       "I JavaScript har man noen innebygde funksjoner man kan bruke til forskjellige ting. splice() til eksempel kan brukes for å endre en liste.\n Nå kan man ikke slette todos, prøv selv 🔍 Skriv ferdig deleteItem for å fikse det.",
-    hint: "tall = [2,4,6,8]; tall.splice(2,1) gir tall = [2,4,8]",
+    hint: "Tips: tall = [2,4,6,8]; tall.splice(2,1) gir tall = [2,4,8]",
     startValue:
       "function deleteItem(shoppingList, shoppingItem){\n  //skriv din kode under her \n  return shoppingList;\n}",
     test: function test(input) {
@@ -89,7 +89,7 @@ var questions = [
     q:
       "Si at du ønsker å vite hvor mange varer du har i handlelisten din, da må vi lage en funksjon for det! Vi har skrevet en for løkke som går igjennom listen og skal telle hvor mange varer det finnes i den, kan du fullføre den?",
     hint:
-      "For å plusse et tall med 1 kan man enten skrive tall = tall +1, eller tall += 1.",
+      "Tips: For å plusse et tall med 1 kan man enten skrive tall = tall +1, eller tall += 1.",
     startValue:
       "function showNumberOfItems(shoppingList){\n  var i=0;\n  var numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    numberOfItems //din kode her;\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
     test: function test(input) {
@@ -103,8 +103,9 @@ var questions = [
     },
   },
   {
-    q: "Hvor god har du blitt til å programmere?",
-    hint: "Denne klarer du!",
+    q:
+      "Nå vil du endre sitronen som står bak 'Handleliste' til å bli en rakett, klarer du det?",
+    hint: "Hvor god har du blitt til å programmere?",
     startValue:
       "var programmingLevel = 'beginner';/*<<-code here*/\nfunction setEmoji(programmingLevel){\n  if(programmingLevel === 'expert'){\n    return('🚀');\n  }\n  else {\n    return('🍋');\n  }\n}",
     test: function test(input) {
@@ -124,7 +125,7 @@ var questions = [
     q:
       "Nå kan man legge til uendelig mange varer i handlelisten vår, prøv selv. Nå ønsker vi å begrense antall varer i handlelisten til maks 25(til og med 25). Skriv ferdig funksjonen for å legge til funksjonalitet for dette.",
     hint:
-      "x < y betyr x er mindre enn y \n x <= y betyr x er mindre eller lik y\n x > y betyr x er større enn y\n x >= y betyr x er større eller lik y\n x != y betyr x er ikke lik y",
+      "Tips: x < y betyr x er mindre enn y \n x <= y betyr x er mindre eller lik y\n x > y betyr x er større enn y\n x >= y betyr x er større eller lik y\n x != y betyr x er ikke lik y",
     startValue:
       "function maxLength (shoppingList, item){\n  if (shoppingList.length /*skriv din kode her*/ 25) {\n    return shoppingList;\n  } else {\n    shoppingList.push(item);\n    return shoppingList;\n  }\n}",
     test: function test(input) {
@@ -215,7 +216,7 @@ var questions = [
     q:
       "I oppgave 4 lagde vi en funksjon som skulle telle antall varer du har i handlekurven. Der tok vi ikke hensyn til at de som man har huket av fra listen ikke burde være med i tellingen lenger. Det skal vi fikse nå! For å få det til må vi lage en if setning som sjekker at varen ikke allerede er markert som gjort",
     hint:
-      "hvis ... === true så betyr det at varen allerede er hentet, hvis ... === false betyr det at den ikke er hentet",
+      "Tips: hvis ... === true så betyr det at varen allerede er hentet, hvis ... === false betyr det at den ikke er hentet",
     startValue:
       "function showNumberOfItems(shoppingList){\n  var i=0;\n  var numberOfItems = 0;\n  for (i = 0; i < shoppingList.length; i++){\n    if(shoppingList[i].completed === false) {\n      numberOfItems += 1;\n    }\n  }\n  return numberOfItems + ' varer i handlelisten';\n}",
     test: function test(input) {
@@ -245,20 +246,20 @@ var questions = [
   },
   {
     q: "Oppgave 8",
-    hint: "hoppsann",
+    hint: "Tips: hoppsann",
     startValue: "//meow",
     test: function test(input) {},
   },
   {
     q: "Oppgave 9",
-    hint: "fallerallera",
+    hint: "Tips: fallerallera",
     startValue: "//meow",
     test: function test(input) {},
   },
   {
     q:
       "Gratulerer!! Du har nå lagt til funksjonalitet på handlelisten og er klar til å jobbe videre på egenhånd🚀🚀",
-    hint: "Om julekvelden da skal alle sammen være glad",
+    hint: "",
     startValue: "//meow",
     test: function test(input) {},
   },
