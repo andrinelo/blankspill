@@ -18,15 +18,17 @@ export default class Frontpage extends React.Component {
     return (
       <div className="container">
         <div className="frontPage">
-            <h1 className = "frontPageHeader">blanke ark</h1>
-            <div className = "buttonMenu">
-              <button className="frontPageBtn" onClick={this.tasks}>forstå koding</button>
-              <button className="frontPageBtn" onClick={this.video}>følg youtube tutorial</button>
-            </div>
+          <h1 className="frontPageHeader">blanke ark</h1>
+          <div className="buttonMenu">
+            <button className="frontPageBtn" onClick={this.tasks}>
+              gjør oppgaver
+            </button>
+            <button className="frontPageBtn" onClick={this.video}>
+              følg youtube tutorial
+            </button>
+          </div>
         </div>
-        <span className="smallScreen">
-          💻 
-        </span>
+        <span className="smallScreen">💻</span>
       </div>
     );
   }
