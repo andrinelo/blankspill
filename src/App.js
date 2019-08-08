@@ -189,7 +189,7 @@ export default class App extends React.Component {
               <div className="question">{hint}</div>
               <a
                 className={this.state.question > 7 ? "question" : null}
-                href="http://localhost:3000/video"
+                href="blankspill.surge.sh/video"
               >
                 {link}
               </a>
