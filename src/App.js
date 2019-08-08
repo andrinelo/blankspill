@@ -15,6 +15,7 @@ import "react-s-alert/dist/s-alert-css-effects/jelly.css";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
 import { tsExternalModuleReference } from "@babel/types";
+import { Link } from "react-router-dom";
 
 export default class App extends React.Component {
   constructor(props, context) {
@@ -187,12 +188,9 @@ export default class App extends React.Component {
               </div>
               <div className="question">{Questions[this.state.question].q}</div>
               <div className="question">{hint}</div>
-              <a
-                className={this.state.question > 7 ? "question" : null}
-                href="blankspill.surge.sh/video"
-              >
+              <Link to="/video" visible={this.state.question > 7 ? "question" : null}>
                 {link}
-              </a>
+              </Link>
             </div>
             <div className="aceEditor">
               <AceEditor
