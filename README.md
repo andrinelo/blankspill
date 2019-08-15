@@ -12,12 +12,6 @@ Programmering er veldig abstrakt. Du har en variabel, du setter en verdi til den
 <li><a href="https://www.javascript.com/" rel="nofollow">JavaScript</a> - Selvforklarende ;) </li>
 </ul>
 
-### Download
- `git clone https://github.com/andrinelo/blankspill.git` 
- 
- `npm install`
- 
- `npm start` 
 
 
 
